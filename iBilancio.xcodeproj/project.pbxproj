@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E04AC8FD174B753C00C2BB2C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E04AC8FC174B753C00C2BB2C /* User.m */; };
+		E04AC900174B753D00C2BB2C /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = E04AC8FF174B753C00C2BB2C /* Transaction.m */; };
+		E04AC903174B908200C2BB2C /* NewTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = E04AC902174B908200C2BB2C /* NewTransaction.m */; };
 		E0531B0B1747E79900DDF3C9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0531B0A1747E79900DDF3C9 /* UIKit.framework */; };
 		E0531B0D1747E79900DDF3C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0531B0C1747E79900DDF3C9 /* Foundation.framework */; };
 		E0531B0F1747E79900DDF3C9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0531B0E1747E79900DDF3C9 /* CoreGraphics.framework */; };
@@ -16,9 +19,54 @@
 		E0531B1D1747E79900DDF3C9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E0531B1C1747E79900DDF3C9 /* Default.png */; };
 		E0531B1F1747E79900DDF3C9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0531B1E1747E79900DDF3C9 /* Default@2x.png */; };
 		E0531B211747E79900DDF3C9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0531B201747E79900DDF3C9 /* Default-568h@2x.png */; };
+		E0531B2B1747E7C600DDF3C9 /* HomeScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0531B291747E7C600DDF3C9 /* HomeScreenViewController.xib */; };
+		E0531B2E1747E7ED00DDF3C9 /* Application.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0531B2D1747E7ED00DDF3C9 /* Application.xib */; };
+		E0531B311747EA4000DDF3C9 /* HomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0531B301747EA4000DDF3C9 /* HomeScreenViewController.m */; };
+		E0531B351747EB9E00DDF3C9 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0531B331747EB9E00DDF3C9 /* SettingsViewController.m */; };
+		E0531B361747EB9E00DDF3C9 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0531B341747EB9E00DDF3C9 /* SettingsViewController.xib */; };
+		E05EE6B51747F21D00FFDE3B /* TransactionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05EE6B31747F21D00FFDE3B /* TransactionsViewController.m */; };
+		E05EE6B61747F21D00FFDE3B /* TransactionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E05EE6B41747F21D00FFDE3B /* TransactionsViewController.xib */; };
+		E05EE6BA1747F22700FFDE3B /* BudgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05EE6B81747F22700FFDE3B /* BudgetViewController.m */; };
+		E05EE6BB1747F22700FFDE3B /* BudgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E05EE6B91747F22700FFDE3B /* BudgetViewController.xib */; };
+		E090E7B4174BCC360012A570 /* neutralLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = E090E7B3174BCC360012A570 /* neutralLabel.png */; };
+		E090E7B8174BD9290012A570 /* NewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E090E7B6174BD9280012A570 /* NewUserViewController.m */; };
+		E090E7B9174BD9290012A570 /* NewUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E090E7B7174BD9290012A570 /* NewUserViewController.xib */; };
+		E0A0D4F11747FD3B0044E00A /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A0D4EF1747FD3B0044E00A /* HelpViewController.m */; };
+		E0A0D4F21747FD3B0044E00A /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0A0D4F01747FD3B0044E00A /* HelpViewController.xib */; };
+		E0CA994717494E4600BD4A76 /* iBilancio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0CA994517494E4600BD4A76 /* iBilancio.xcdatamodeld */; };
+		E0EBEC8E174B9BFE00DB8982 /* TValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EBEC8C174B9BFE00DB8982 /* TValueViewController.m */; };
+		E0EBEC8F174B9BFE00DB8982 /* TValueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EBEC8D174B9BFE00DB8982 /* TValueViewController.xib */; };
+		E0EBEC96174BA59200DB8982 /* plusLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = E0EBEC94174BA59200DB8982 /* plusLabel.png */; };
+		E0EBEC97174BA59200DB8982 /* minusLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = E0EBEC95174BA59200DB8982 /* minusLabel.png */; };
+		E0EBEC9E174BA87300DB8982 /* plusButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0EBEC9C174BA87300DB8982 /* plusButton.png */; };
+		E0EBEC9F174BA87300DB8982 /* minusButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0EBEC9D174BA87300DB8982 /* minusButton.png */; };
+		E0EC5710174960B10025288A /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EC570E174960B10025288A /* UsersViewController.m */; };
+		E0EC5711174960B10025288A /* UsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EC570F174960B10025288A /* UsersViewController.xib */; };
+		E0EC5714174962D80025288A /* NewUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EC5713174962D80025288A /* NewUser.m */; };
+		E0F93F09174909040023E407 /* PositiveTransactionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F93F08174909040023E407 /* PositiveTransactionCell.m */; };
+		E0F93F0B1749091A0023E407 /* PositiveTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F93F0A1749091A0023E407 /* PositiveTransactionCell.xib */; };
+		E0F93F0D1749092F0023E407 /* NegativeTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F93F0C1749092F0023E407 /* NegativeTransactionCell.xib */; };
+		E0F93F10174909400023E407 /* NegativeTransactionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F93F0F174909400023E407 /* NegativeTransactionCell.m */; };
+		E0F93F14174911BE0023E407 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F93F13174911BE0023E407 /* plus.png */; };
+		E0F93F16174912CC0023E407 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F93F15174912CC0023E407 /* minus.png */; };
+		E0F93F19174917F60023E407 /* NewBudget.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F93F18174917F60023E407 /* NewBudget.m */; };
+		E0F93F1D174922050023E407 /* NewTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F93F1B174922040023E407 /* NewTransactionViewController.m */; };
+		E0F93F1E174922050023E407 /* NewTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F93F1C174922040023E407 /* NewTransactionViewController.xib */; };
+		E0F93F201749252D0023E407 /* right arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F93F1F1749252D0023E407 /* right arrow.png */; };
+		E0F93F22174925C40023E407 /* left arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F93F21174925C40023E407 /* left arrow.png */; };
+		E0F93F2417492AA80023E407 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F93F2317492AA80023E407 /* calendar.png */; };
+		E0F93F2817492C320023E407 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F93F2617492C310023E407 /* CalendarViewController.m */; };
+		E0F93F2917492C320023E407 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F93F2717492C310023E407 /* CalendarViewController.xib */; };
+		E0F93F2B17494C9E0023E407 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F93F2A17494C9E0023E407 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E04AC8FB174B753C00C2BB2C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		E04AC8FC174B753C00C2BB2C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		E04AC8FE174B753C00C2BB2C /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
+		E04AC8FF174B753C00C2BB2C /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
+		E04AC901174B908100C2BB2C /* NewTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTransaction.h; sourceTree = "<group>"; };
+		E04AC902174B908200C2BB2C /* NewTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTransaction.m; sourceTree = "<group>"; };
 		E0531B071747E79900DDF3C9 /* iBilancio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBilancio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0531B0A1747E79900DDF3C9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E0531B0C1747E79900DDF3C9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -32,6 +80,59 @@
 		E0531B1C1747E79900DDF3C9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		E0531B1E1747E79900DDF3C9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E0531B201747E79900DDF3C9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E0531B291747E7C600DDF3C9 /* HomeScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeScreenViewController.xib; sourceTree = "<group>"; };
+		E0531B2D1747E7ED00DDF3C9 /* Application.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Application.xib; sourceTree = "<group>"; };
+		E0531B2F1747EA4000DDF3C9 /* HomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenViewController.h; sourceTree = "<group>"; };
+		E0531B301747EA4000DDF3C9 /* HomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenViewController.m; sourceTree = "<group>"; };
+		E0531B321747EB9E00DDF3C9 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		E0531B331747EB9E00DDF3C9 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		E0531B341747EB9E00DDF3C9 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		E05EE6B21747F21D00FFDE3B /* TransactionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionsViewController.h; sourceTree = "<group>"; };
+		E05EE6B31747F21D00FFDE3B /* TransactionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionsViewController.m; sourceTree = "<group>"; };
+		E05EE6B41747F21D00FFDE3B /* TransactionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionsViewController.xib; sourceTree = "<group>"; };
+		E05EE6B71747F22700FFDE3B /* BudgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BudgetViewController.h; sourceTree = "<group>"; };
+		E05EE6B81747F22700FFDE3B /* BudgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BudgetViewController.m; sourceTree = "<group>"; };
+		E05EE6B91747F22700FFDE3B /* BudgetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BudgetViewController.xib; sourceTree = "<group>"; };
+		E090E7B3174BCC360012A570 /* neutralLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neutralLabel.png; sourceTree = "<group>"; };
+		E090E7B5174BD9280012A570 /* NewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserViewController.h; sourceTree = "<group>"; };
+		E090E7B6174BD9280012A570 /* NewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserViewController.m; sourceTree = "<group>"; };
+		E090E7B7174BD9290012A570 /* NewUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserViewController.xib; sourceTree = "<group>"; };
+		E0A0D4EE1747FD3B0044E00A /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		E0A0D4EF1747FD3B0044E00A /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+		E0A0D4F01747FD3B0044E00A /* HelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
+		E0CA994617494E4600BD4A76 /* iBilancio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iBilancio.xcdatamodel; sourceTree = "<group>"; };
+		E0EBEC8B174B9BFE00DB8982 /* TValueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TValueViewController.h; sourceTree = "<group>"; };
+		E0EBEC8C174B9BFE00DB8982 /* TValueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TValueViewController.m; sourceTree = "<group>"; };
+		E0EBEC8D174B9BFE00DB8982 /* TValueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TValueViewController.xib; sourceTree = "<group>"; };
+		E0EBEC94174BA59200DB8982 /* plusLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusLabel.png; sourceTree = "<group>"; };
+		E0EBEC95174BA59200DB8982 /* minusLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minusLabel.png; sourceTree = "<group>"; };
+		E0EBEC9C174BA87300DB8982 /* plusButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusButton.png; sourceTree = "<group>"; };
+		E0EBEC9D174BA87300DB8982 /* minusButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minusButton.png; sourceTree = "<group>"; };
+		E0EC570D174960B10025288A /* UsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersViewController.h; sourceTree = "<group>"; };
+		E0EC570E174960B10025288A /* UsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersViewController.m; sourceTree = "<group>"; };
+		E0EC570F174960B10025288A /* UsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UsersViewController.xib; sourceTree = "<group>"; };
+		E0EC5712174962D80025288A /* NewUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUser.h; sourceTree = "<group>"; };
+		E0EC5713174962D80025288A /* NewUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUser.m; sourceTree = "<group>"; };
+		E0F93F07174909040023E407 /* PositiveTransactionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositiveTransactionCell.h; sourceTree = "<group>"; };
+		E0F93F08174909040023E407 /* PositiveTransactionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositiveTransactionCell.m; sourceTree = "<group>"; };
+		E0F93F0A1749091A0023E407 /* PositiveTransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PositiveTransactionCell.xib; sourceTree = "<group>"; };
+		E0F93F0C1749092F0023E407 /* NegativeTransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NegativeTransactionCell.xib; sourceTree = "<group>"; };
+		E0F93F0E174909400023E407 /* NegativeTransactionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NegativeTransactionCell.h; sourceTree = "<group>"; };
+		E0F93F0F174909400023E407 /* NegativeTransactionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NegativeTransactionCell.m; sourceTree = "<group>"; };
+		E0F93F13174911BE0023E407 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		E0F93F15174912CC0023E407 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
+		E0F93F17174917F60023E407 /* NewBudget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewBudget.h; sourceTree = "<group>"; };
+		E0F93F18174917F60023E407 /* NewBudget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewBudget.m; sourceTree = "<group>"; };
+		E0F93F1A174922040023E407 /* NewTransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTransactionViewController.h; sourceTree = "<group>"; };
+		E0F93F1B174922040023E407 /* NewTransactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTransactionViewController.m; sourceTree = "<group>"; };
+		E0F93F1C174922040023E407 /* NewTransactionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTransactionViewController.xib; sourceTree = "<group>"; };
+		E0F93F1F1749252D0023E407 /* right arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right arrow.png"; sourceTree = "<group>"; };
+		E0F93F21174925C40023E407 /* left arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left arrow.png"; sourceTree = "<group>"; };
+		E0F93F2317492AA80023E407 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		E0F93F2517492C310023E407 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		E0F93F2617492C310023E407 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		E0F93F2717492C310023E407 /* CalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
+		E0F93F2A17494C9E0023E407 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0F93F2B17494C9E0023E407 /* CoreData.framework in Frameworks */,
 				E0531B0B1747E79900DDF3C9 /* UIKit.framework in Frameworks */,
 				E0531B0D1747E79900DDF3C9 /* Foundation.framework in Frameworks */,
 				E0531B0F1747E79900DDF3C9 /* CoreGraphics.framework in Frameworks */,
@@ -51,6 +153,21 @@
 		E0531AFE1747E79900DDF3C9 = {
 			isa = PBXGroup;
 			children = (
+				E0F93F2317492AA80023E407 /* calendar.png */,
+				E0F93F21174925C40023E407 /* left arrow.png */,
+				E0F93F1F1749252D0023E407 /* right arrow.png */,
+				E0F93F15174912CC0023E407 /* minus.png */,
+				E0EBEC9D174BA87300DB8982 /* minusButton.png */,
+				E0EBEC95174BA59200DB8982 /* minusLabel.png */,
+				E090E7B3174BCC360012A570 /* neutralLabel.png */,
+				E0F93F13174911BE0023E407 /* plus.png */,
+				E0EBEC9C174BA87300DB8982 /* plusButton.png */,
+				E0EBEC94174BA59200DB8982 /* plusLabel.png */,
+				E0531B2D1747E7ED00DDF3C9 /* Application.xib */,
+				E0CA994517494E4600BD4A76 /* iBilancio.xcdatamodeld */,
+				E0531B2C1747E7CF00DDF3C9 /* controller */,
+				E0A0D4F31747FE8F0044E00A /* model */,
+				E0A0D4F51747FEA80044E00A /* view */,
 				E0531B101747E79900DDF3C9 /* iBilancio */,
 				E0531B091747E79900DDF3C9 /* Frameworks */,
 				E0531B081747E79900DDF3C9 /* Products */,
@@ -68,6 +185,7 @@
 		E0531B091747E79900DDF3C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E0F93F2A17494C9E0023E407 /* CoreData.framework */,
 				E0531B0A1747E79900DDF3C9 /* UIKit.framework */,
 				E0531B0C1747E79900DDF3C9 /* Foundation.framework */,
 				E0531B0E1747E79900DDF3C9 /* CoreGraphics.framework */,
@@ -97,6 +215,73 @@
 				E0531B201747E79900DDF3C9 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E0531B2C1747E7CF00DDF3C9 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				E05EE6B71747F22700FFDE3B /* BudgetViewController.h */,
+				E05EE6B81747F22700FFDE3B /* BudgetViewController.m */,
+				E0F93F2517492C310023E407 /* CalendarViewController.h */,
+				E0F93F2617492C310023E407 /* CalendarViewController.m */,
+				E0A0D4EE1747FD3B0044E00A /* HelpViewController.h */,
+				E0A0D4EF1747FD3B0044E00A /* HelpViewController.m */,
+				E0531B2F1747EA4000DDF3C9 /* HomeScreenViewController.h */,
+				E0531B301747EA4000DDF3C9 /* HomeScreenViewController.m */,
+				E0F93F1A174922040023E407 /* NewTransactionViewController.h */,
+				E0F93F1B174922040023E407 /* NewTransactionViewController.m */,
+				E090E7B5174BD9280012A570 /* NewUserViewController.h */,
+				E090E7B6174BD9280012A570 /* NewUserViewController.m */,
+				E0531B321747EB9E00DDF3C9 /* SettingsViewController.h */,
+				E0531B331747EB9E00DDF3C9 /* SettingsViewController.m */,
+				E05EE6B21747F21D00FFDE3B /* TransactionsViewController.h */,
+				E05EE6B31747F21D00FFDE3B /* TransactionsViewController.m */,
+				E0EBEC8B174B9BFE00DB8982 /* TValueViewController.h */,
+				E0EBEC8C174B9BFE00DB8982 /* TValueViewController.m */,
+				E0EC570D174960B10025288A /* UsersViewController.h */,
+				E0EC570E174960B10025288A /* UsersViewController.m */,
+				E05EE6B91747F22700FFDE3B /* BudgetViewController.xib */,
+				E0F93F2717492C310023E407 /* CalendarViewController.xib */,
+				E0A0D4F01747FD3B0044E00A /* HelpViewController.xib */,
+				E0531B291747E7C600DDF3C9 /* HomeScreenViewController.xib */,
+				E0F93F1C174922040023E407 /* NewTransactionViewController.xib */,
+				E090E7B7174BD9290012A570 /* NewUserViewController.xib */,
+				E0531B341747EB9E00DDF3C9 /* SettingsViewController.xib */,
+				E05EE6B41747F21D00FFDE3B /* TransactionsViewController.xib */,
+				E0EBEC8D174B9BFE00DB8982 /* TValueViewController.xib */,
+				E0EC570F174960B10025288A /* UsersViewController.xib */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		E0A0D4F31747FE8F0044E00A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E04AC8FE174B753C00C2BB2C /* Transaction.h */,
+				E04AC8FF174B753C00C2BB2C /* Transaction.m */,
+				E04AC8FB174B753C00C2BB2C /* User.h */,
+				E04AC8FC174B753C00C2BB2C /* User.m */,
+				E04AC901174B908100C2BB2C /* NewTransaction.h */,
+				E04AC902174B908200C2BB2C /* NewTransaction.m */,
+				E0F93F17174917F60023E407 /* NewBudget.h */,
+				E0F93F18174917F60023E407 /* NewBudget.m */,
+				E0EC5712174962D80025288A /* NewUser.h */,
+				E0EC5713174962D80025288A /* NewUser.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		E0A0D4F51747FEA80044E00A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				E0F93F0E174909400023E407 /* NegativeTransactionCell.h */,
+				E0F93F0F174909400023E407 /* NegativeTransactionCell.m */,
+				E0F93F0C1749092F0023E407 /* NegativeTransactionCell.xib */,
+				E0F93F07174909040023E407 /* PositiveTransactionCell.h */,
+				E0F93F08174909040023E407 /* PositiveTransactionCell.m */,
+				E0F93F0A1749091A0023E407 /* PositiveTransactionCell.xib */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +339,29 @@
 				E0531B1D1747E79900DDF3C9 /* Default.png in Resources */,
 				E0531B1F1747E79900DDF3C9 /* Default@2x.png in Resources */,
 				E0531B211747E79900DDF3C9 /* Default-568h@2x.png in Resources */,
+				E0531B2B1747E7C600DDF3C9 /* HomeScreenViewController.xib in Resources */,
+				E0531B2E1747E7ED00DDF3C9 /* Application.xib in Resources */,
+				E0531B361747EB9E00DDF3C9 /* SettingsViewController.xib in Resources */,
+				E05EE6B61747F21D00FFDE3B /* TransactionsViewController.xib in Resources */,
+				E05EE6BB1747F22700FFDE3B /* BudgetViewController.xib in Resources */,
+				E0A0D4F21747FD3B0044E00A /* HelpViewController.xib in Resources */,
+				E0F93F0B1749091A0023E407 /* PositiveTransactionCell.xib in Resources */,
+				E0F93F0D1749092F0023E407 /* NegativeTransactionCell.xib in Resources */,
+				E0F93F14174911BE0023E407 /* plus.png in Resources */,
+				E0F93F16174912CC0023E407 /* minus.png in Resources */,
+				E0F93F1E174922050023E407 /* NewTransactionViewController.xib in Resources */,
+				E0F93F201749252D0023E407 /* right arrow.png in Resources */,
+				E0F93F22174925C40023E407 /* left arrow.png in Resources */,
+				E0F93F2417492AA80023E407 /* calendar.png in Resources */,
+				E0F93F2917492C320023E407 /* CalendarViewController.xib in Resources */,
+				E0EC5711174960B10025288A /* UsersViewController.xib in Resources */,
+				E0EBEC8F174B9BFE00DB8982 /* TValueViewController.xib in Resources */,
+				E0EBEC96174BA59200DB8982 /* plusLabel.png in Resources */,
+				E0EBEC97174BA59200DB8982 /* minusLabel.png in Resources */,
+				E0EBEC9E174BA87300DB8982 /* plusButton.png in Resources */,
+				E0EBEC9F174BA87300DB8982 /* minusButton.png in Resources */,
+				E090E7B4174BCC360012A570 /* neutralLabel.png in Resources */,
+				E090E7B9174BD9290012A570 /* NewUserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +374,24 @@
 			files = (
 				E0531B171747E79900DDF3C9 /* main.m in Sources */,
 				E0531B1B1747E79900DDF3C9 /* AppDelegate.m in Sources */,
+				E0531B311747EA4000DDF3C9 /* HomeScreenViewController.m in Sources */,
+				E0531B351747EB9E00DDF3C9 /* SettingsViewController.m in Sources */,
+				E05EE6B51747F21D00FFDE3B /* TransactionsViewController.m in Sources */,
+				E05EE6BA1747F22700FFDE3B /* BudgetViewController.m in Sources */,
+				E0A0D4F11747FD3B0044E00A /* HelpViewController.m in Sources */,
+				E0F93F09174909040023E407 /* PositiveTransactionCell.m in Sources */,
+				E0F93F10174909400023E407 /* NegativeTransactionCell.m in Sources */,
+				E0F93F19174917F60023E407 /* NewBudget.m in Sources */,
+				E0F93F1D174922050023E407 /* NewTransactionViewController.m in Sources */,
+				E0F93F2817492C320023E407 /* CalendarViewController.m in Sources */,
+				E0CA994717494E4600BD4A76 /* iBilancio.xcdatamodeld in Sources */,
+				E0EC5710174960B10025288A /* UsersViewController.m in Sources */,
+				E0EC5714174962D80025288A /* NewUser.m in Sources */,
+				E04AC8FD174B753C00C2BB2C /* User.m in Sources */,
+				E04AC900174B753D00C2BB2C /* Transaction.m in Sources */,
+				E04AC903174B908200C2BB2C /* NewTransaction.m in Sources */,
+				E0EBEC8E174B9BFE00DB8982 /* TValueViewController.m in Sources */,
+				E090E7B8174BD9290012A570 /* NewUserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,8 +504,22 @@
 				E0531B261747E79900DDF3C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E0CA994517494E4600BD4A76 /* iBilancio.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E0CA994617494E4600BD4A76 /* iBilancio.xcdatamodel */,
+			);
+			currentVersion = E0CA994617494E4600BD4A76 /* iBilancio.xcdatamodel */;
+			path = iBilancio.xcdatamodeld;
+			sourceTree = SOURCE_ROOT;
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E0531AFF1747E79900DDF3C9 /* Project object */;
 }
