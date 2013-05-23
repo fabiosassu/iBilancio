@@ -13,6 +13,4 @@
 
 @property (nonatomic, strong) NSMutableArray *users;
 
-- (IBAction)cancel:(id)sender;
-
 @end

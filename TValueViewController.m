@@ -74,7 +74,7 @@
 }
 
 - (IBAction)saveValue:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"selectedValue" object:[NSNumber numberWithFloat:self.accumulator]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"selectedValue" object:[NSNumber numberWithDouble:self.accumulator]];
     
     [self.navigationController popViewControllerAnimated:YES];
     

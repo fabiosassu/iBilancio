@@ -23,7 +23,7 @@
 @property (nonatomic, strong) NSManagedObjectContext* managedObjectContext;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) NSDate *selectedDate;
-@property (nonatomic) float selectedValue;
+@property (nonatomic) double selectedValue;
 @property (nonatomic, strong) NSMutableArray *totalUsers;
 
 - (IBAction)valueButtonPressed:(id)sender;

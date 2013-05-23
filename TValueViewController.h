@@ -13,7 +13,7 @@
 @property (nonatomic,strong) IBOutlet UILabel *value;
 @property (nonatomic, strong) IBOutlet UIButton *signButton;
 @property (nonatomic, strong) IBOutlet UIImageView *valueLabel;
-@property (nonatomic) float accumulator;
+@property (nonatomic) double accumulator;
 
 - (IBAction)numberKeyPressed:(id)sender;
 

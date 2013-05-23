@@ -15,4 +15,6 @@
 @property (nonatomic, strong) IBOutlet UILabel *transactionValue;
 @property (nonatomic, strong) IBOutlet UILabel *transactionDate;
 
+-(void) fillWithTransaction: (NewTransaction *) transaction;
+
 @end

@@ -11,9 +11,10 @@
 @class NewTransaction;
 @interface NegativeTransactionCell : UITableViewCell
 
-
 @property (nonatomic, strong) IBOutlet UILabel *transactionOwner;
 @property (nonatomic, strong) IBOutlet UILabel *transactionValue;
 @property (nonatomic, strong) IBOutlet UILabel *transactionDate;
+
+-(void) fillWithTransaction: (NewTransaction *) transaction;
 
 @end

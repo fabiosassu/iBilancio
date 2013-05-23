@@ -10,6 +10,8 @@
 #import "NewTransactionViewController.h"
 #import "PositiveTransactionCell.h"
 #import "NegativeTransactionCell.h"
+#import "AppDelegate.h"
+#import "Transaction.h"
 
 @interface TransactionsViewController ()
 
@@ -33,13 +35,6 @@
     UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addTransaction:)] autorelease];
     self.navigationItem.rightBarButtonItem = addButton;
     
-    if (self.transactions.count == 0) {
-        
-        NewTransactionViewController *firstTransaction = [[NewTransactionViewController alloc]initWithNibName:@"NewTransactionViewController" bundle:nil];
-        [self.navigationController pushViewController:firstTransaction animated:YES];
-        [firstTransaction release];
-    }
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -47,79 +42,26 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)insertNewObject:(id)sender
-{
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-    
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"date"];
-    
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-}
-
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
-    }
-    
-    NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
-    // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Transaction" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    // Set the batch size to a suitable number.
-    [fetchRequest setFetchBatchSize:20];
-    
-    // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO] autorelease];
-    NSArray *sortDescriptors = @[sortDescriptor];
-    
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    
-    // Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"] autorelease];
-    aFetchedResultsController.delegate = self;
-    self.fetchedResultsController = aFetchedResultsController;
-    
-	NSError *error = nil;
-	if (![self.fetchedResultsController performFetch:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-	    abort();
-	}
-    
-    return _fetchedResultsController;
-}
-
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     self.navigationController.navigationBarHidden = NO;
+    
+    AppDelegate *app  = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    
     // Fetch the transactions from persistent data store
-//    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
-//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Transaction"];
-//    self.transactions = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
-//    
-//    [self.tableView reloadData];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSManagedObjectContext *managedObjectContext = [app managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Transaction"];
+    self.transactions = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    
+    [self.tableView reloadData];
+    
+    if (self.transactions.count == 0) {
+        
+        NewTransactionViewController *firstTransaction = [[NewTransactionViewController alloc]initWithNibName:@"NewTransactionViewController" bundle:nil];
+        [self.navigationController pushViewController:firstTransaction animated:YES];
+        [firstTransaction release];
+    }
 }
 
 #pragma mark - Table view data source
@@ -140,19 +82,29 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    Transaction *transactions = [self.transactions objectAtIndex:indexPath.row];
+    if (transactions.value>0)
+    {
+        static NSString *CellIdentifier = @"PositiveTransactionCell";
+        PositiveTransactionCell *cell = (PositiveTransactionCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"PositiveTransactionCell" owner:self options:nil]objectAtIndex:0];
+            NewTransaction *selected = [self.transactions objectAtIndex:indexPath.row];
+            [cell fillWithTransaction:selected];
+            
+        }   return cell;
     }
-    
-    // Configure the cell...
-//    NSManagedObject *transactions = [self.transactions objectAtIndex:indexPath.row];
-    
-//    [cell.transactionOwner setText:[NSString stringWithFormat:@"%@ %@", [device valueForKey:@"name"], [device valueForKey:@"version"]]];
-//    [cell.detailTextLabel setText:[transactions valueForKey:@"company"]];
-    
-    return cell;
+    else
+    {
+        static NSString *CellIdentifier = @"NegativeTransactionCell";
+        NegativeTransactionCell *cell = (NegativeTransactionCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"NegativeTransactionCell" owner:self options:nil]objectAtIndex:0];
+            NewTransaction *selected = [self.transactions objectAtIndex:indexPath.row];
+            [cell fillWithTransaction:selected];
+            
+        }   return cell;
+    }   
 }
 
 /*

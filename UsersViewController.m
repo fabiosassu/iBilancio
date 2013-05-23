@@ -14,7 +14,9 @@
 
 @end
 
-@implementation UsersViewController
+@implementation UsersViewController{
+    int selectedIndex;
+}
 
 - (NSManagedObjectContext *)managedObjectContext
 {
@@ -108,19 +110,34 @@
     }
     
     // Configure the cell...
-  
+    if (indexPath.row == selectedIndex)
+    {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else
+    {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     cell.textLabel.text = [NSString stringWithFormat:@"%@",[(NewUser*)[self.users objectAtIndex:indexPath.row]userName]];
+    
     return cell;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == selectedIndex)
+    {
+        return NO;
+    }
+    else
     
     return YES;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
         [self.users removeObjectAtIndex:indexPath.row];
         [self.tableView reloadData];
     }
@@ -190,10 +207,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    selectedIndex = indexPath.row;
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"selectedUser" object:(NewUser*)cell];
     
     [self.navigationController popViewControllerAnimated:YES];
-   
+    [tableView reloadData];
 }
 
 @end

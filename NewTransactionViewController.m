@@ -96,7 +96,7 @@
 }
 
 -(void) parseFloat:(NSNotification *) obj{
-    self.selectedValue = [[obj object] floatValue];
+    self.selectedValue = [[obj object] doubleValue];
     
 }
 
@@ -150,8 +150,7 @@
 
 - (IBAction)nextDayButtonPressed:(id)sender{
     
-    _selectedDate = [NSDate dateWithTimeInterval:86400 sinceDate:_selectedDate];
-    [_selectedDate retain];
+    self.selectedDate = [NSDate dateWithTimeInterval:86400 sinceDate:_selectedDate];
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"dd/MM/yyyy"];
     _dateLabel.text = [df stringFromDate:_selectedDate];
@@ -160,8 +159,7 @@
 
 - (IBAction)previousDayButtonPressed:(id)sender{
     
-    _selectedDate = [NSDate dateWithTimeInterval:-86400 sinceDate:_selectedDate];
-    [_selectedDate retain];
+    self.selectedDate = [NSDate dateWithTimeInterval:-86400 sinceDate:_selectedDate];
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"dd/MM/yyyy"];
     _dateLabel.text = [df stringFromDate:_selectedDate];
@@ -184,14 +182,16 @@
 
 - (IBAction)saveTransaction:(id)sender {
     
-    NSManagedObjectContext *context = [self managedObjectContext];
+    AppDelegate *app  = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    
+    NSManagedObjectContext *context = [app managedObjectContext];
     
     Transaction *newTransaction = [NSEntityDescription insertNewObjectForEntityForName:@"Transaction" inManagedObjectContext:context];
     
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
     [newTransaction setValue:_selectedDate forKey:@"date"];
-    [newTransaction setValue:[NSNumber numberWithFloat:_selectedValue] forKey:@"value"];
+    [newTransaction setValue:[NSNumber numberWithDouble:_selectedValue] forKey:@"value"];
     
     // Save the context.
     NSError *error = nil;
@@ -201,6 +201,7 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)calendarButtonPressed:(id)sender{

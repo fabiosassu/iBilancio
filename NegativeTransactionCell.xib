@@ -97,7 +97,6 @@
 								<string key="NSFrame">{{135, 25}, {124, 15}}</string>
 								<reference key="NSSuperview" ref="516496518"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -165,14 +164,6 @@
 			<array class="NSMutableArray" key="connectionRecords">
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">transactionDate</string>
-						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="149492897"/>
-					</object>
-					<int key="connectionID">64</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">transactionOwner</string>
 						<reference key="source" ref="841351856"/>
 						<reference key="destination" ref="340002276"/>
@@ -186,6 +177,14 @@
 						<reference key="destination" ref="339994299"/>
 					</object>
 					<int key="connectionID">66</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">transactionDate</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="149492897"/>
+					</object>
+					<int key="connectionID">67</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -255,7 +254,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">66</int>
+			<int key="maxID">67</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
