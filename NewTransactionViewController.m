@@ -37,7 +37,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseFloat:) name:@"selectedValue" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setUser:) name:@"selectedUser" object:nil];
-    
+    [self.tableView reloadData];
     self.valueLabel.text = [NSString stringWithFormat:@"%8.2f",self.selectedValue];
     
     if (self.selectedValue > 0){
@@ -48,7 +48,7 @@
         UIImage *button = [UIImage imageNamed:@"minusLabel"];
         [self.valueButton setImage:button forState:0];
     }
-    [self.tableView reloadData];
+    
 
 }
 
@@ -69,30 +69,54 @@
     
     self.valueLabel.text = [NSString stringWithFormat:@"%8.2f",self.selectedValue];
     
-    if (self.totalUsers.count == 0)
+    AppDelegate *app  = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    
+    // Fetch the transactions from persistent data store
+    NSManagedObjectContext *managedObjectContext = [app managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"User"];
+    self.totalUsers = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    
+    if ([self.totalUsers count] == 0)
     {
-        NSMutableArray *tmp = [[NSMutableArray alloc]init];
+        AppDelegate *app  = (AppDelegate*)[UIApplication sharedApplication].delegate;
+        
+        NSManagedObjectContext *context = [app managedObjectContext];
+        
         NewUser *firstUser = [[NewUser alloc]initWithUserName:@"Me"];
-        firstUser.isAdmin = YES;
-        [tmp addObject:firstUser];
+        firstUser.isAdmin = [NSNumber numberWithInt:1];
+        
+        User *newUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
+        
+        // If appropriate, configure the new managed object.
+        // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
+        [newUser setValue:firstUser.userName forKey:@"name"];
+        [newUser setValue:firstUser.isAdmin forKey:@"isAdmin"];
         [firstUser release];
-        self.totalUsers = tmp;
-        [tmp release];
+        // Save the context.
+        NSError *error = nil;
+        if (![context save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+            [self.tableView reloadData];
     }
     
     NewTransaction *new = [[NewTransaction alloc]init];
-    new.transactionDate = _selectedDate;
-    new.userName = [NSString stringWithFormat:@"%@",[(NewUser*)[_totalUsers objectAtIndex:0]userName]];
-    new.transactionValue = _selectedValue;
+    new.transactionDate = self.selectedDate;
+    new.userName = [NSString stringWithFormat:@"%@",[(User*)[self.totalUsers objectAtIndex:0]name]];
+    new.transactionValue = [NSNumber numberWithDouble:self.selectedValue];
     
     self.selectedDate = [NSDate date];
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"dd/MM/yyyy"];
-    _dateLabel.text = [df stringFromDate:_selectedDate];
+    self.dateLabel.text = [df stringFromDate:self.selectedDate];
     [df release];
     [new release];
     
     [self.tableView reloadData];
+     
 }
 
 -(void) parseFloat:(NSNotification *) obj{
@@ -101,7 +125,7 @@
 }
 
 -(void) setUser:(NSNotification *) obj{
-    [self.totalUsers insertObject:(NewUser*)[obj object] atIndex:0];
+    self.selectedUser = [[obj object]integerValue];
     
 }
 
@@ -132,7 +156,7 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",[(NewUser*)[self.totalUsers objectAtIndex:0]userName]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",[(User*)[self.totalUsers objectAtIndex:self.selectedUser]name]];
     return cell;
 }
 
@@ -150,19 +174,19 @@
 
 - (IBAction)nextDayButtonPressed:(id)sender{
     
-    self.selectedDate = [NSDate dateWithTimeInterval:86400 sinceDate:_selectedDate];
+    self.selectedDate = [NSDate dateWithTimeInterval:86400 sinceDate:self.selectedDate];
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"dd/MM/yyyy"];
-    _dateLabel.text = [df stringFromDate:_selectedDate];
+    self.dateLabel.text = [df stringFromDate:self.selectedDate];
     [df release];
 }
 
 - (IBAction)previousDayButtonPressed:(id)sender{
     
-    self.selectedDate = [NSDate dateWithTimeInterval:-86400 sinceDate:_selectedDate];
+    self.selectedDate = [NSDate dateWithTimeInterval:-86400 sinceDate:self.selectedDate];
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"dd/MM/yyyy"];
-    _dateLabel.text = [df stringFromDate:_selectedDate];
+    self.dateLabel.text = [df stringFromDate:self.selectedDate];
     [df release];
     
 }
@@ -190,8 +214,8 @@
     
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newTransaction setValue:_selectedDate forKey:@"date"];
-    [newTransaction setValue:[NSNumber numberWithDouble:_selectedValue] forKey:@"value"];
+    [newTransaction setValue:self.selectedDate forKey:@"date"];
+    [newTransaction setValue:[NSNumber numberWithDouble:self.selectedValue] forKey:@"value"];
     
     // Save the context.
     NSError *error = nil;

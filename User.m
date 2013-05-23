@@ -13,6 +13,6 @@
 
 @dynamic isAdmin;
 @dynamic name;
-@dynamic makesA;
+@dynamic doesA;
 
 @end

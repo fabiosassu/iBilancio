@@ -10,7 +10,7 @@
 
 @interface NewTransaction : NewUser
 
-@property (nonatomic) float transactionValue;
+@property (nonatomic, strong) NSNumber *transactionValue;
 @property (nonatomic, strong) NSDate *transactionDate;
 @property (nonatomic, strong) NSString *transactionCategory;
 

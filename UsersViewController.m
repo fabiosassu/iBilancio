@@ -9,6 +9,8 @@
 #import "UsersViewController.h"
 #import "NewUser.h"
 #import "NewUserViewController.h"
+#import "AppDelegate.h"
+#import "User.h"
 
 @interface UsersViewController ()
 
@@ -17,17 +19,6 @@
 @implementation UsersViewController{
     int selectedIndex;
 }
-
-- (NSManagedObjectContext *)managedObjectContext
-{
-    NSManagedObjectContext *context = nil;
-    id delegate = [[UIApplication sharedApplication] delegate];
-    if ([delegate performSelector:@selector(managedObjectContext)]) {
-        context = [delegate managedObjectContext];
-    }
-    return context;
-}
-
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -42,7 +33,12 @@
 {
     [super viewWillAppear:YES];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addUser:) name:@"isThereAnyUser" object:nil];
+    AppDelegate *app  = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    
+    // Fetch the transactions from persistent data store
+    NSManagedObjectContext *managedObjectContext = [app managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"User"];
+    self.users = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
     [self.tableView reloadData];
     
@@ -118,7 +114,7 @@
     {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",[(NewUser*)[self.users objectAtIndex:indexPath.row]userName]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",[(User*)[self.users objectAtIndex:indexPath.row]name]];
     
     return cell;
 }
@@ -138,18 +134,19 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        [self.users removeObjectAtIndex:indexPath.row];
+        AppDelegate *app  = (AppDelegate*)[UIApplication sharedApplication].delegate;
+        NSManagedObjectContext *context = [app managedObjectContext];
+        [context deleteObject:[self.users objectAtIndex:indexPath.row]];
+        
+        NSError *error = nil;
+        if (![context save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
         [self.tableView reloadData];
     }
-}
-
--(void) addUser:(NSNotification *) obj{
-    
-    NewUser *new = [[NewUser alloc]initWithUserName:[NSString stringWithFormat:@"%@",[(NewUser*)[obj object]userName]]];
-    new.isAdmin = [(NewUser*)[obj object]isAdmin];
-    [self.users addObject:new];
-    [new release];
-    
 }
 
 - (IBAction)cancel:(id)sender {
@@ -206,11 +203,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    
+        
     selectedIndex = indexPath.row;
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"selectedUser" object:(NewUser*)cell];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"selectedUser" object:[NSNumber numberWithInt:selectedIndex]];
     
     [self.navigationController popViewControllerAnimated:YES];
     [tableView reloadData];

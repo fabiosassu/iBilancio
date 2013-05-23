@@ -7,13 +7,11 @@
 //
 
 #import "Transaction.h"
-#import "User.h"
-
 
 @implementation Transaction
 
 @dynamic date;
 @dynamic value;
-@dynamic madeBy;
+@dynamic isMadeBy;
 
 @end

@@ -8,6 +8,8 @@
 
 #import "NewUserViewController.h"
 #import "NewUser.h"
+#import "AppDelegate.h"
+#import "User.h"
 
 @interface NewUserViewController ()
 
@@ -53,12 +55,32 @@
     NSString *tmp = [NSString stringWithFormat:@"%@",self.userNamez.text];
     NewUser *newUser = [[NewUser alloc]initWithUserName:tmp];
     if (self.admin.on){
-        newUser.isAdmin = YES;
+        newUser.isAdmin = [NSNumber numberWithInt:1];
     } else {
-        newUser.isAdmin = NO;
+        newUser.isAdmin = [NSNumber numberWithInt:0];
     }
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"isThereAnyUser" object:newUser];
+    AppDelegate *app  = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    
+    NSManagedObjectContext *context = [app managedObjectContext];
+    
+    User *newUser2 = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
+    
+    // If appropriate, configure the new managed object.
+    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
+    [newUser2 setValue:newUser.userName forKey:@"name"];
+    [newUser2 setValue:newUser.isAdmin forKey:@"isAdmin"];
+    
+    // Save the context.
+    NSError *error = nil;
+    if (![context save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"isThereAnyUser" object:newUser];
     [self.navigationController popViewControllerAnimated:YES];
     [newUser release];
     [tmp release];

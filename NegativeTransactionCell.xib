@@ -108,8 +108,15 @@
 								<reference key="IBUIHighlightedColor" ref="1030222964"/>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<int key="IBUITextAlignment">1</int>
-								<reference key="IBUIFontDescription" ref="821133456"/>
-								<reference key="IBUIFont" ref="715188385"/>
+								<object class="IBUIFontDescription" key="IBUIFontDescription">
+									<int key="type">2</int>
+									<double key="pointSize">12</double>
+								</object>
+								<object class="NSFont" key="IBUIFont">
+									<string key="NSName">Helvetica-Bold</string>
+									<double key="NSSize">12</double>
+									<int key="NSfFlags">16</int>
+								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 							<object class="IBUILabel" id="340002276">
@@ -164,27 +171,27 @@
 			<array class="NSMutableArray" key="connectionRecords">
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">transactionDate</string>
+						<reference key="source" ref="257119866"/>
+						<reference key="destination" ref="149492897"/>
+					</object>
+					<int key="connectionID">72</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">transactionOwner</string>
-						<reference key="source" ref="841351856"/>
+						<reference key="source" ref="257119866"/>
 						<reference key="destination" ref="340002276"/>
 					</object>
-					<int key="connectionID">65</int>
+					<int key="connectionID">73</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">transactionValue</string>
-						<reference key="source" ref="841351856"/>
+						<reference key="source" ref="257119866"/>
 						<reference key="destination" ref="339994299"/>
 					</object>
-					<int key="connectionID">66</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">transactionDate</string>
-						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="149492897"/>
-					</object>
-					<int key="connectionID">67</int>
+					<int key="connectionID">74</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -210,10 +217,10 @@
 						<int key="objectID">59</int>
 						<reference key="object" ref="257119866"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="861434542"/>
 							<reference ref="340002276"/>
 							<reference ref="339994299"/>
 							<reference ref="149492897"/>
+							<reference ref="861434542"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -240,10 +247,10 @@
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
-				<string key="-1.CustomClassName">NegativeTransactionCell</string>
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="59.CustomClassName">NegativeTransactionCell</string>
 				<string key="59.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="60.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="61.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -254,7 +261,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">67</int>
+			<int key="maxID">74</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

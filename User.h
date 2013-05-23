@@ -14,6 +14,6 @@
 
 @property (nonatomic, retain) NSNumber * isAdmin;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSManagedObject *makesA;
+@property (nonatomic, retain) NSManagedObject *doesA;
 
 @end

@@ -7,19 +7,18 @@
 //
 
 #import "PositiveTransactionCell.h"
-#import "NewTransaction.h"
+#import "Transaction.h"
 
 @implementation PositiveTransactionCell
 
--(void) fillWithTransaction: (NewTransaction *) transaction{
+-(void) fillWithTransaction: (Transaction *) transaction{
     
-    self.transactionOwner.text = [NSString stringWithFormat:@"%@",transaction.userName];
+    self.transactionOwner.text = [NSString stringWithFormat:@"%@",transaction.isMadeBy.name];
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"dd:MM:yyyy"];
-    self.transactionDate.text = [df stringFromDate:transaction.transactionDate];
+    [df setDateFormat:@"dd/MM/yyyy"];
+    self.transactionDate.text = [df stringFromDate:transaction.date];
     [df release];
-    self.transactionValue.text = [NSString stringWithFormat:@"%.2f",transaction.transactionValue];
-    
+    self.transactionValue.text = [NSString stringWithFormat:@"%.2f",[transaction.value doubleValue]];
     
 }
 

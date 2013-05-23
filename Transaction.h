@@ -8,13 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "User.h"
 
-@class User;
-
-@interface Transaction : NSManagedObject
+@interface Transaction : User
 
 @property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSNumber * value;
-@property (nonatomic, retain) User *madeBy;
+@property (nonatomic, retain) User *isMadeBy;
 
 @end

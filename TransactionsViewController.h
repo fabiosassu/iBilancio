@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface TransactionsViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface TransactionsViewController : UITableViewController 
 
 @property (strong) NSMutableArray *transactions;
 

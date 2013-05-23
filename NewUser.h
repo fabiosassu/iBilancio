@@ -11,7 +11,7 @@
 @interface NewUser : NSObject
 
 @property (nonatomic, strong) NSString *userName;
-@property (nonatomic) BOOL isAdmin;
+@property (nonatomic, strong) NSNumber *isAdmin;
 
 -(id)initWithUserName:(NSString *) userName;
 

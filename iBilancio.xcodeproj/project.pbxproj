@@ -276,9 +276,9 @@
 			children = (
 				E0F93F0E174909400023E407 /* NegativeTransactionCell.h */,
 				E0F93F0F174909400023E407 /* NegativeTransactionCell.m */,
-				E0F93F0C1749092F0023E407 /* NegativeTransactionCell.xib */,
 				E0F93F07174909040023E407 /* PositiveTransactionCell.h */,
 				E0F93F08174909040023E407 /* PositiveTransactionCell.m */,
+				E0F93F0C1749092F0023E407 /* NegativeTransactionCell.xib */,
 				E0F93F0A1749091A0023E407 /* PositiveTransactionCell.xib */,
 			);
 			name = view;

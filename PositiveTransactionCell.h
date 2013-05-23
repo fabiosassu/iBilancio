@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class NewTransaction;
+@class Transaction;
+
 @interface PositiveTransactionCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet UILabel *transactionOwner;
 @property (nonatomic, strong) IBOutlet UILabel *transactionValue;
 @property (nonatomic, strong) IBOutlet UILabel *transactionDate;
 
--(void) fillWithTransaction: (NewTransaction *) transaction;
+-(void) fillWithTransaction: (Transaction *) transaction;
 
 @end
