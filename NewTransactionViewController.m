@@ -230,9 +230,9 @@
     
 }
 
-- (IBAction)cancel:(id)sender {
+- (IBAction)cancel:(id)sender
+{
     [self.navigationController popViewControllerAnimated:YES];
-    self.hidesBottomBarWhenPushed = NO;
 }
 
 - (IBAction)saveTransaction:(id)sender {

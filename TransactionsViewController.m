@@ -19,30 +19,6 @@
 
 @implementation TransactionsViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addTransaction:)] autorelease];
-    self.navigationItem.rightBarButtonItem = addButton;
-    
-    self.tableView.separatorColor = [UIColor clearColor];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -68,6 +44,21 @@
     [self.tableView reloadData];
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addTransaction:)] autorelease];
+    self.navigationItem.rightBarButtonItem = addButton;
+    
+    self.tableView.separatorColor = [UIColor clearColor];
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -82,6 +73,11 @@
 
     // Return the number of rows in the section.
     return self.transactions.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 60;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -177,7 +173,7 @@
 
 -(IBAction)addTransaction:(id)sender{
     NewTransactionViewController *new = [[NewTransactionViewController alloc]initWithNibName:@"NewTransactionViewController" bundle:nil];
-    self.hidesBottomBarWhenPushed = YES;
+    new.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:new animated:YES];
     [new release];
 }
