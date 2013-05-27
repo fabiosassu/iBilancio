@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E01F15ED1753C47200CEFEFF /* ReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01F15EB1753C47200CEFEFF /* ReminderViewController.m */; };
+		E01F15EE1753C47200CEFEFF /* ReminderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E01F15EC1753C47200CEFEFF /* ReminderViewController.xib */; };
 		E04AC8FD174B753C00C2BB2C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E04AC8FC174B753C00C2BB2C /* User.m */; };
 		E04AC900174B753D00C2BB2C /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = E04AC8FF174B753C00C2BB2C /* Transaction.m */; };
 		E04AC903174B908200C2BB2C /* NewTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = E04AC902174B908200C2BB2C /* NewTransaction.m */; };
@@ -61,6 +63,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E01F15EA1753C47200CEFEFF /* ReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderViewController.h; sourceTree = "<group>"; };
+		E01F15EB1753C47200CEFEFF /* ReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderViewController.m; sourceTree = "<group>"; };
+		E01F15EC1753C47200CEFEFF /* ReminderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReminderViewController.xib; sourceTree = "<group>"; };
 		E04AC8FB174B753C00C2BB2C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		E04AC8FC174B753C00C2BB2C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		E04AC8FE174B753C00C2BB2C /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
@@ -230,6 +235,9 @@
 				E0531B301747EA4000DDF3C9 /* HomeScreenViewController.m */,
 				E0F93F1A174922040023E407 /* NewTransactionViewController.h */,
 				E0F93F1B174922040023E407 /* NewTransactionViewController.m */,
+				E01F15EA1753C47200CEFEFF /* ReminderViewController.h */,
+				E01F15EB1753C47200CEFEFF /* ReminderViewController.m */,
+				E01F15EC1753C47200CEFEFF /* ReminderViewController.xib */,
 				E090E7B5174BD9280012A570 /* NewUserViewController.h */,
 				E090E7B6174BD9280012A570 /* NewUserViewController.m */,
 				E0531B321747EB9E00DDF3C9 /* SettingsViewController.h */,
@@ -362,6 +370,7 @@
 				E0EBEC9F174BA87300DB8982 /* minusButton.png in Resources */,
 				E090E7B4174BCC360012A570 /* neutralLabel.png in Resources */,
 				E090E7B9174BD9290012A570 /* NewUserViewController.xib in Resources */,
+				E01F15EE1753C47200CEFEFF /* ReminderViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +401,7 @@
 				E04AC903174B908200C2BB2C /* NewTransaction.m in Sources */,
 				E0EBEC8E174B9BFE00DB8982 /* TValueViewController.m in Sources */,
 				E090E7B8174BD9290012A570 /* NewUserViewController.m in Sources */,
+				E01F15ED1753C47200CEFEFF /* ReminderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

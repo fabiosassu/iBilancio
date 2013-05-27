@@ -46,7 +46,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    self.navigationController.navigationBarHidden = NO;
     
     AppDelegate *app  = (AppDelegate*)[UIApplication sharedApplication].delegate;
     
@@ -178,6 +177,7 @@
 
 -(IBAction)addTransaction:(id)sender{
     NewTransactionViewController *new = [[NewTransactionViewController alloc]initWithNibName:@"NewTransactionViewController" bundle:nil];
+    self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:new animated:YES];
     [new release];
 }

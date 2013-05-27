@@ -15,6 +15,7 @@
 #import "UsersViewController.h"
 #import "AppDelegate.h"
 #import "TValueViewController.h"
+#import "ReminderViewController.h"
 
 @interface NewTransactionViewController ()
 
@@ -22,29 +23,30 @@
 
 @implementation NewTransactionViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseFloat:) name:@"selectedValue" object:nil];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setUser:) name:@"selectedUser" object:nil];
+    
     [self.tableView reloadData];
+    
+    if (self.reminderSwitch.on)
+    {
+        [self.reminderTableView reloadData];
+    }
+    
     self.valueLabel.text = [NSString stringWithFormat:@"%8.2f",self.selectedValue];
     
-    if (self.selectedValue > 0){
+    if (self.selectedValue > 0)
+    {
         UIImage *button = [UIImage imageNamed:@"plusLabel"];
         [self.valueButton setImage:button forState:0];
     }
-    if (self.selectedValue < 0){
+    if (self.selectedValue < 0)
+    {
         UIImage *button = [UIImage imageNamed:@"minusLabel"];
         [self.valueButton setImage:button forState:0];
     }
@@ -66,6 +68,7 @@
     
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveTransaction:)];
     [self.navigationItem setRightBarButtonItem:rightBarButton];
+    [rightBarButton release];
     
     self.valueLabel.text = [NSString stringWithFormat:@"%8.2f",self.selectedValue];
     
@@ -100,6 +103,7 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
+        
             [self.tableView reloadData];
     }
     
@@ -131,8 +135,17 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
+    NSString *header = nil;
     
-    return @"User";
+    if (tableView==self.tableView)
+    {
+        header = @"User:";
+    }
+    else if (tableView==self.reminderTableView)
+    {
+        header = @"The transaction occurs every:";
+    }
+    return header;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -156,19 +169,37 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",[(User*)[self.totalUsers objectAtIndex:self.selectedUser]name]];
+    if (tableView==self.tableView)
+    {
+        cell.textLabel.text = [NSString stringWithFormat:@"%@",[(User*)[self.totalUsers objectAtIndex:self.selectedUser]name]];
+    }
+    else
+    {
+        cell.textLabel.text = @"Never";
+    }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if (tableView==self.tableView)
+    {
+        
      UsersViewController *detailViewController = [[UsersViewController alloc] initWithNibName:@"UsersViewController" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
      detailViewController.users = _totalUsers;
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
+    }
+    else
+    {
+        ReminderViewController *detailViewController = [[ReminderViewController alloc] initWithNibName:@"ReminderViewController" bundle:nil];
+        // ...
+        // Pass the selected object to the new view controller.
+        [self.navigationController pushViewController:detailViewController animated:YES];
+        [detailViewController release];
+    }
     
 }
 
@@ -200,8 +231,8 @@
 }
 
 - (IBAction)cancel:(id)sender {
-    
     [self.navigationController popViewControllerAnimated:YES];
+    self.hidesBottomBarWhenPushed = NO;
 }
 
 - (IBAction)saveTransaction:(id)sender {
@@ -235,49 +266,34 @@
     [callCalendar release];
 }
 
-- (void)didReceiveMemoryWarning
+-(IBAction)advancedSwitchOn:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (self.advancedOptionsSwitch.on)
+    {
+        self.reminderLabel.hidden = NO;
+        self.reminderSwitch.hidden = NO;
+    }
+    else
+    {
+        self.reminderLabel.hidden = YES;
+        self.reminderSwitch.hidden = YES;
+    }
 }
 
-#pragma mark - Fetched results controller
-
-- (NSFetchedResultsController *)fetchedResultsController
+-(IBAction)reminderSwitchOn:(id)sender
 {
-    if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
+    if (self.reminderSwitch.on)
+    {
+        self.reminderTableView.hidden = NO;
+        self.scrollView.contentSize = CGSizeMake(320, 590);
+        self.scrollView.scrollEnabled = YES;
     }
-    
-    NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
-    // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    // Set the batch size to a suitable number.
-    [fetchRequest setFetchBatchSize:20];
-    
-    // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO] autorelease];
-    NSArray *sortDescriptors = @[sortDescriptor];
-    
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    
-    // Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"cache"] autorelease];
-    aFetchedResultsController.delegate = self;
-    self.fetchedResultsController = aFetchedResultsController;
-    
-	NSError *error = nil;
-	if (![self.fetchedResultsController performFetch:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-	    abort();
-	}
-    
-    return _fetchedResultsController;
+    else
+    {
+        self.reminderTableView.hidden = YES;
+        self.scrollView.contentSize = CGSizeMake(320, 548);
+        self.scrollView.scrollEnabled = NO;
+    }
 }
 
 @end
