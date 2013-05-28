@@ -7,6 +7,9 @@
 //
 
 #import "BudgetViewController.h"
+#import "NewBudgetViewController.h"
+#import "AppDelegate.h"
+#import "Budget.h"
 
 @interface BudgetViewController ()
 
@@ -14,18 +17,27 @@
 
 @implementation BudgetViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (void)viewWillAppear:(BOOL)animated
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    [super viewWillAppear:YES];
+    
+    AppDelegate *app  = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    
+    // Fetch the transactions from persistent data store
+    NSManagedObjectContext *managedObjectContext = [app managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Budget"];
+    self.budgets = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    
+    
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addBudget:)] autorelease];
+    self.navigationItem.rightBarButtonItem = addButton;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -46,14 +58,14 @@
 {
 
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 
     // Return the number of rows in the section.
-    return 0;
+    return self.budgets.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,12 +73,20 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Configure the cell...
-    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",[(Budget*)[self.budgets objectAtIndex:indexPath.row]name]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",[(Budget*)[self.budgets objectAtIndex:indexPath.row]amount]];
     return cell;
+}
+
+-(IBAction)addBudget:(id)sender{
+    NewBudgetViewController *new = [[NewBudgetViewController alloc]initWithNibName:@"NewBudgetViewController" bundle:nil];
+    new.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:new animated:YES];
+    [new release];
 }
 
 /*
@@ -78,19 +98,30 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        
+        AppDelegate *app  = (AppDelegate*)[UIApplication sharedApplication].delegate;
+        
+        NSManagedObjectContext *context = [app managedObjectContext];
+        [context deleteObject:[self.budgets objectAtIndex:indexPath.row]];
+      //  [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        NSError *error = nil;
+        if (![context save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.

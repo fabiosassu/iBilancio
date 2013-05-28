@@ -17,15 +17,6 @@
 
 @implementation NewUserViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -51,12 +42,16 @@
     return NO;
 }
 
-- (IBAction)addUser:(id)sender{
+- (IBAction)addUser:(id)sender
+{
     NSString *tmp = [NSString stringWithFormat:@"%@",self.userNamez.text];
     NewUser *newUser = [[NewUser alloc]initWithUserName:tmp];
-    if (self.admin.on){
+    if (self.admin.on)
+    {
         newUser.isAdmin = [NSNumber numberWithInt:1];
-    } else {
+    }
+    else
+    {
         newUser.isAdmin = [NSNumber numberWithInt:0];
     }
     
@@ -80,7 +75,6 @@
         abort();
     }
 
-//    [[NSNotificationCenter defaultCenter] postNotificationName:@"isThereAnyUser" object:newUser];
     [self.navigationController popViewControllerAnimated:YES];
     [newUser release];
     [tmp release];
@@ -89,12 +83,6 @@
 - (IBAction)cancel:(id)sender {
     
     [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

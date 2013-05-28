@@ -21,7 +21,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:YES];
     
     AppDelegate *app  = (AppDelegate*)[UIApplication sharedApplication].delegate;
     
@@ -37,6 +37,7 @@
     if ([self.transactions count] == 0) {
         
         NewTransactionViewController *firstTransaction = [[NewTransactionViewController alloc]initWithNibName:@"NewTransactionViewController" bundle:nil];
+        firstTransaction.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:firstTransaction animated:YES];
         [firstTransaction release];
     }
@@ -85,7 +86,7 @@
 {
     Transaction *transactionz = [self.transactions objectAtIndex:indexPath.row];
 
-    if ([transactionz.value intValue]>=0)
+    if ([transactionz.value floatValue]>=0.00)
     {
         static NSString *CellIdentifier = @"PositiveTransactionCell";
         PositiveTransactionCell *cell = (PositiveTransactionCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];

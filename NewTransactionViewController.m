@@ -107,17 +107,11 @@
             [self.tableView reloadData];
     }
     
-    NewTransaction *new = [[NewTransaction alloc]init];
-    new.transactionDate = self.selectedDate;
-    new.userName = [NSString stringWithFormat:@"%@",[(User*)[self.totalUsers objectAtIndex:0]name]];
-    new.transactionValue = [NSNumber numberWithDouble:self.selectedValue];
-    
     self.selectedDate = [NSDate date];
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"dd/MM/yyyy"];
     self.dateLabel.text = [df stringFromDate:self.selectedDate];
     [df release];
-    [new release];
     
     [self.tableView reloadData];
      
@@ -188,7 +182,7 @@
      UsersViewController *detailViewController = [[UsersViewController alloc] initWithNibName:@"UsersViewController" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
-     detailViewController.users = _totalUsers;
+//     detailViewController.users = self.totalUsers;
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
     }
@@ -247,6 +241,7 @@
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
     [newTransaction setValue:self.selectedDate forKey:@"date"];
     [newTransaction setValue:[NSNumber numberWithDouble:self.selectedValue] forKey:@"value"];
+    [newTransaction setValue:[self.totalUsers objectAtIndex:self.selectedUser] forKey:@"isMadeBy"];
     
     // Save the context.
     NSError *error = nil;

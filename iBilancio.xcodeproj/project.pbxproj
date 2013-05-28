@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		E01F15ED1753C47200CEFEFF /* ReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01F15EB1753C47200CEFEFF /* ReminderViewController.m */; };
 		E01F15EE1753C47200CEFEFF /* ReminderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E01F15EC1753C47200CEFEFF /* ReminderViewController.xib */; };
+		E03C31DB1755287F004B75AC /* transactions.png in Resources */ = {isa = PBXBuildFile; fileRef = E03C31D91755287F004B75AC /* transactions.png */; };
+		E03C31DC1755287F004B75AC /* transactions@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03C31DA1755287F004B75AC /* transactions@2x.png */; };
+		E03C31DF17553117004B75AC /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = E03C31DD17553117004B75AC /* settings.png */; };
+		E03C31E017553117004B75AC /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E03C31DE17553117004B75AC /* settings@2x.png */; };
 		E04AC8FD174B753C00C2BB2C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E04AC8FC174B753C00C2BB2C /* User.m */; };
 		E04AC900174B753D00C2BB2C /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = E04AC8FF174B753C00C2BB2C /* Transaction.m */; };
 		E04AC903174B908200C2BB2C /* NewTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = E04AC902174B908200C2BB2C /* NewTransaction.m */; };
@@ -30,12 +34,21 @@
 		E05EE6B61747F21D00FFDE3B /* TransactionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E05EE6B41747F21D00FFDE3B /* TransactionsViewController.xib */; };
 		E05EE6BA1747F22700FFDE3B /* BudgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05EE6B81747F22700FFDE3B /* BudgetViewController.m */; };
 		E05EE6BB1747F22700FFDE3B /* BudgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E05EE6B91747F22700FFDE3B /* BudgetViewController.xib */; };
+		E089FD9A1754E3400073529D /* BudgetNotificationSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E089FD981754E3400073529D /* BudgetNotificationSelectorViewController.m */; };
+		E089FD9B1754E3400073529D /* BudgetNotificationSelectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E089FD991754E3400073529D /* BudgetNotificationSelectorViewController.xib */; };
+		E089FDA21754F0460073529D /* NewBudgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E089FDA01754F0450073529D /* NewBudgetViewController.m */; };
+		E089FDA31754F0460073529D /* NewBudgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E089FDA11754F0450073529D /* NewBudgetViewController.xib */; };
+		E089FDA71754F7E70073529D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E089FDA61754F7E70073529D /* icon@2x.png */; };
+		E089FDA91754FA030073529D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E089FDA81754FA030073529D /* icon.png */; };
 		E090E7B4174BCC360012A570 /* neutralLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = E090E7B3174BCC360012A570 /* neutralLabel.png */; };
 		E090E7B8174BD9290012A570 /* NewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E090E7B6174BD9280012A570 /* NewUserViewController.m */; };
 		E090E7B9174BD9290012A570 /* NewUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E090E7B7174BD9290012A570 /* NewUserViewController.xib */; };
 		E0A0D4F11747FD3B0044E00A /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A0D4EF1747FD3B0044E00A /* HelpViewController.m */; };
 		E0A0D4F21747FD3B0044E00A /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0A0D4F01747FD3B0044E00A /* HelpViewController.xib */; };
 		E0CA994717494E4600BD4A76 /* iBilancio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0CA994517494E4600BD4A76 /* iBilancio.xcdatamodeld */; };
+		E0E71DE21755177400085EB9 /* balance@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E71DE11755177400085EB9 /* balance@2x.png */; };
+		E0E71DE4175518BF00085EB9 /* balance.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E71DE3175518BF00085EB9 /* balance.png */; };
+		E0E71DE717551E4C00085EB9 /* Budget.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E71DE617551E4C00085EB9 /* Budget.m */; };
 		E0EBEC8E174B9BFE00DB8982 /* TValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EBEC8C174B9BFE00DB8982 /* TValueViewController.m */; };
 		E0EBEC8F174B9BFE00DB8982 /* TValueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EBEC8D174B9BFE00DB8982 /* TValueViewController.xib */; };
 		E0EBEC96174BA59200DB8982 /* plusLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = E0EBEC94174BA59200DB8982 /* plusLabel.png */; };
@@ -66,6 +79,10 @@
 		E01F15EA1753C47200CEFEFF /* ReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderViewController.h; sourceTree = "<group>"; };
 		E01F15EB1753C47200CEFEFF /* ReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderViewController.m; sourceTree = "<group>"; };
 		E01F15EC1753C47200CEFEFF /* ReminderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReminderViewController.xib; sourceTree = "<group>"; };
+		E03C31D91755287F004B75AC /* transactions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transactions.png; sourceTree = "<group>"; };
+		E03C31DA1755287F004B75AC /* transactions@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transactions@2x.png"; sourceTree = "<group>"; };
+		E03C31DD17553117004B75AC /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		E03C31DE17553117004B75AC /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		E04AC8FB174B753C00C2BB2C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		E04AC8FC174B753C00C2BB2C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		E04AC8FE174B753C00C2BB2C /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
@@ -98,6 +115,14 @@
 		E05EE6B71747F22700FFDE3B /* BudgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BudgetViewController.h; sourceTree = "<group>"; };
 		E05EE6B81747F22700FFDE3B /* BudgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BudgetViewController.m; sourceTree = "<group>"; };
 		E05EE6B91747F22700FFDE3B /* BudgetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BudgetViewController.xib; sourceTree = "<group>"; };
+		E089FD971754E3400073529D /* BudgetNotificationSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BudgetNotificationSelectorViewController.h; sourceTree = "<group>"; };
+		E089FD981754E3400073529D /* BudgetNotificationSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BudgetNotificationSelectorViewController.m; sourceTree = "<group>"; };
+		E089FD991754E3400073529D /* BudgetNotificationSelectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BudgetNotificationSelectorViewController.xib; sourceTree = "<group>"; };
+		E089FD9F1754F0450073529D /* NewBudgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewBudgetViewController.h; sourceTree = "<group>"; };
+		E089FDA01754F0450073529D /* NewBudgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewBudgetViewController.m; sourceTree = "<group>"; };
+		E089FDA11754F0450073529D /* NewBudgetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewBudgetViewController.xib; sourceTree = "<group>"; };
+		E089FDA61754F7E70073529D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		E089FDA81754FA030073529D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		E090E7B3174BCC360012A570 /* neutralLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neutralLabel.png; sourceTree = "<group>"; };
 		E090E7B5174BD9280012A570 /* NewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserViewController.h; sourceTree = "<group>"; };
 		E090E7B6174BD9280012A570 /* NewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserViewController.m; sourceTree = "<group>"; };
@@ -106,6 +131,10 @@
 		E0A0D4EF1747FD3B0044E00A /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		E0A0D4F01747FD3B0044E00A /* HelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
 		E0CA994617494E4600BD4A76 /* iBilancio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iBilancio.xcdatamodel; sourceTree = "<group>"; };
+		E0E71DE11755177400085EB9 /* balance@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "balance@2x.png"; sourceTree = "<group>"; };
+		E0E71DE3175518BF00085EB9 /* balance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = balance.png; sourceTree = "<group>"; };
+		E0E71DE517551E4C00085EB9 /* Budget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Budget.h; sourceTree = "<group>"; };
+		E0E71DE617551E4C00085EB9 /* Budget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Budget.m; sourceTree = "<group>"; };
 		E0EBEC8B174B9BFE00DB8982 /* TValueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TValueViewController.h; sourceTree = "<group>"; };
 		E0EBEC8C174B9BFE00DB8982 /* TValueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TValueViewController.m; sourceTree = "<group>"; };
 		E0EBEC8D174B9BFE00DB8982 /* TValueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TValueViewController.xib; sourceTree = "<group>"; };
@@ -158,7 +187,11 @@
 		E0531AFE1747E79900DDF3C9 = {
 			isa = PBXGroup;
 			children = (
+				E0E71DE3175518BF00085EB9 /* balance.png */,
+				E0E71DE11755177400085EB9 /* balance@2x.png */,
 				E0F93F2317492AA80023E407 /* calendar.png */,
+				E089FDA81754FA030073529D /* icon.png */,
+				E089FDA61754F7E70073529D /* icon@2x.png */,
 				E0F93F21174925C40023E407 /* left arrow.png */,
 				E0F93F1F1749252D0023E407 /* right arrow.png */,
 				E0FB43C91754DC78001C349E /* minus.png */,
@@ -168,6 +201,10 @@
 				E0FB43CA1754DC78001C349E /* plus.png */,
 				E0EBEC9C174BA87300DB8982 /* plusButton.png */,
 				E0EBEC94174BA59200DB8982 /* plusLabel.png */,
+				E03C31DD17553117004B75AC /* settings.png */,
+				E03C31DE17553117004B75AC /* settings@2x.png */,
+				E03C31D91755287F004B75AC /* transactions.png */,
+				E03C31DA1755287F004B75AC /* transactions@2x.png */,
 				E0531B2D1747E7ED00DDF3C9 /* Application.xib */,
 				E0CA994517494E4600BD4A76 /* iBilancio.xcdatamodeld */,
 				E0531B2C1747E7CF00DDF3C9 /* controller */,
@@ -225,6 +262,8 @@
 		E0531B2C1747E7CF00DDF3C9 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				E089FD971754E3400073529D /* BudgetNotificationSelectorViewController.h */,
+				E089FD981754E3400073529D /* BudgetNotificationSelectorViewController.m */,
 				E05EE6B71747F22700FFDE3B /* BudgetViewController.h */,
 				E05EE6B81747F22700FFDE3B /* BudgetViewController.m */,
 				E0F93F2517492C310023E407 /* CalendarViewController.h */,
@@ -233,13 +272,14 @@
 				E0A0D4EF1747FD3B0044E00A /* HelpViewController.m */,
 				E0531B2F1747EA4000DDF3C9 /* HomeScreenViewController.h */,
 				E0531B301747EA4000DDF3C9 /* HomeScreenViewController.m */,
+				E089FD9F1754F0450073529D /* NewBudgetViewController.h */,
+				E089FDA01754F0450073529D /* NewBudgetViewController.m */,
 				E0F93F1A174922040023E407 /* NewTransactionViewController.h */,
 				E0F93F1B174922040023E407 /* NewTransactionViewController.m */,
-				E01F15EA1753C47200CEFEFF /* ReminderViewController.h */,
-				E01F15EB1753C47200CEFEFF /* ReminderViewController.m */,
-				E01F15EC1753C47200CEFEFF /* ReminderViewController.xib */,
 				E090E7B5174BD9280012A570 /* NewUserViewController.h */,
 				E090E7B6174BD9280012A570 /* NewUserViewController.m */,
+				E01F15EA1753C47200CEFEFF /* ReminderViewController.h */,
+				E01F15EB1753C47200CEFEFF /* ReminderViewController.m */,
 				E0531B321747EB9E00DDF3C9 /* SettingsViewController.h */,
 				E0531B331747EB9E00DDF3C9 /* SettingsViewController.m */,
 				E05EE6B21747F21D00FFDE3B /* TransactionsViewController.h */,
@@ -252,12 +292,15 @@
 				E0F93F2717492C310023E407 /* CalendarViewController.xib */,
 				E0A0D4F01747FD3B0044E00A /* HelpViewController.xib */,
 				E0531B291747E7C600DDF3C9 /* HomeScreenViewController.xib */,
+				E089FDA11754F0450073529D /* NewBudgetViewController.xib */,
 				E0F93F1C174922040023E407 /* NewTransactionViewController.xib */,
 				E090E7B7174BD9290012A570 /* NewUserViewController.xib */,
+				E01F15EC1753C47200CEFEFF /* ReminderViewController.xib */,
 				E0531B341747EB9E00DDF3C9 /* SettingsViewController.xib */,
 				E05EE6B41747F21D00FFDE3B /* TransactionsViewController.xib */,
 				E0EBEC8D174B9BFE00DB8982 /* TValueViewController.xib */,
 				E0EC570F174960B10025288A /* UsersViewController.xib */,
+				E089FD991754E3400073529D /* BudgetNotificationSelectorViewController.xib */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -265,6 +308,8 @@
 		E0A0D4F31747FE8F0044E00A /* model */ = {
 			isa = PBXGroup;
 			children = (
+				E0E71DE517551E4C00085EB9 /* Budget.h */,
+				E0E71DE617551E4C00085EB9 /* Budget.m */,
 				E04AC8FE174B753C00C2BB2C /* Transaction.h */,
 				E04AC8FF174B753C00C2BB2C /* Transaction.m */,
 				E04AC8FB174B753C00C2BB2C /* User.h */,
@@ -371,6 +416,16 @@
 				E01F15EE1753C47200CEFEFF /* ReminderViewController.xib in Resources */,
 				E0FB43CB1754DC78001C349E /* minus.png in Resources */,
 				E0FB43CC1754DC78001C349E /* plus.png in Resources */,
+				E089FD9B1754E3400073529D /* BudgetNotificationSelectorViewController.xib in Resources */,
+				E089FDA31754F0460073529D /* NewBudgetViewController.xib in Resources */,
+				E089FDA71754F7E70073529D /* icon@2x.png in Resources */,
+				E089FDA91754FA030073529D /* icon.png in Resources */,
+				E0E71DE21755177400085EB9 /* balance@2x.png in Resources */,
+				E0E71DE4175518BF00085EB9 /* balance.png in Resources */,
+				E03C31DB1755287F004B75AC /* transactions.png in Resources */,
+				E03C31DC1755287F004B75AC /* transactions@2x.png in Resources */,
+				E03C31DF17553117004B75AC /* settings.png in Resources */,
+				E03C31E017553117004B75AC /* settings@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +457,9 @@
 				E0EBEC8E174B9BFE00DB8982 /* TValueViewController.m in Sources */,
 				E090E7B8174BD9290012A570 /* NewUserViewController.m in Sources */,
 				E01F15ED1753C47200CEFEFF /* ReminderViewController.m in Sources */,
+				E089FD9A1754E3400073529D /* BudgetNotificationSelectorViewController.m in Sources */,
+				E089FDA21754F0460073529D /* NewBudgetViewController.m in Sources */,
+				E0E71DE717551E4C00085EB9 /* Budget.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
