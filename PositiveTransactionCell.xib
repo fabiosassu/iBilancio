@@ -58,7 +58,7 @@
 							<object class="IBUILabel" id="518347710">
 								<reference key="NSNextResponder" ref="707760121"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{61, 0}, {124, 21}}</string>
+								<string key="NSFrame">{{105, 0}, {103, 21}}</string>
 								<reference key="NSSuperview" ref="707760121"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="82158145"/>
@@ -94,7 +94,7 @@
 							<object class="IBUILabel" id="82158145">
 								<reference key="NSNextResponder" ref="707760121"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{61, 40}, {124, 15}}</string>
+								<string key="NSFrame">{{105, 40}, {103, 15}}</string>
 								<reference key="NSSuperview" ref="707760121"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="393145549"/>
@@ -123,7 +123,7 @@
 							<object class="IBUILabel" id="393145549">
 								<reference key="NSNextResponder" ref="707760121"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{185, 40}, {95, 15}}</string>
+								<string key="NSFrame">{{211, 40}, {95, 15}}</string>
 								<reference key="NSSuperview" ref="707760121"/>
 								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -303,7 +303,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NS.key.0">plus.png</string>
-			<string key="NS.object.0">{320, 60}</string>
+			<string key="NS.object.0">{320, 65}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

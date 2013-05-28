@@ -52,6 +52,7 @@
     self.navigationItem.rightBarButtonItem = addButton;
     
     self.tableView.separatorColor = [UIColor clearColor];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -122,12 +123,11 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        
+
         AppDelegate *app  = (AppDelegate*)[UIApplication sharedApplication].delegate;
         NSManagedObjectContext *context = [app managedObjectContext];
         [context deleteObject:[self.transactions objectAtIndex:indexPath.row]];
         
-        [self.tableView reloadData];
         NSError *error = nil;
         if (![context save:&error]) {
             // Replace this implementation with code to handle the error appropriately.

@@ -45,6 +45,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrameSize">{320, 60}</string>
 								<reference key="NSSuperview" ref="516496518"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="340002276"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -57,8 +58,9 @@
 							<object class="IBUILabel" id="149492897">
 								<reference key="NSNextResponder" ref="516496518"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{40, 40}, {95, 15}}</string>
+								<string key="NSFrame">{{16, 40}, {95, 15}}</string>
 								<reference key="NSSuperview" ref="516496518"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="339994299"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -92,8 +94,9 @@
 							<object class="IBUILabel" id="339994299">
 								<reference key="NSNextResponder" ref="516496518"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{135, 40}, {124, 15}}</string>
+								<string key="NSFrame">{{109, 40}, {105, 15}}</string>
 								<reference key="NSSuperview" ref="516496518"/>
+								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -119,8 +122,9 @@
 							<object class="IBUILabel" id="340002276">
 								<reference key="NSNextResponder" ref="516496518"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{135, 0}, {124, 21}}</string>
+								<string key="NSFrame">{{109, 0}, {105, 21}}</string>
 								<reference key="NSSuperview" ref="516496518"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="149492897"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -140,6 +144,7 @@
 						</array>
 						<string key="NSFrameSize">{320, 59}</string>
 						<reference key="NSSuperview" ref="257119866"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="861434542"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -155,6 +160,7 @@
 				</array>
 				<string key="NSFrameSize">{320, 60}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="516496518"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -257,14 +263,44 @@
 			<nil key="sourceID"/>
 			<int key="maxID">74</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">NegativeTransactionCell</string>
+					<string key="superclassName">UITableViewCell</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="transactionDate">UILabel</string>
+						<string key="transactionOwner">UILabel</string>
+						<string key="transactionValue">UILabel</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="transactionDate">
+							<string key="name">transactionDate</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="transactionOwner">
+							<string key="name">transactionOwner</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="transactionValue">
+							<string key="name">transactionValue</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/NegativeTransactionCell.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NS.key.0">minus.png</string>
-			<string key="NS.object.0">{320, 60}</string>
+			<string key="NS.object.0">{320, 65}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

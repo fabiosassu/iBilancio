@@ -49,8 +49,6 @@
 		E0F93F0B1749091A0023E407 /* PositiveTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F93F0A1749091A0023E407 /* PositiveTransactionCell.xib */; };
 		E0F93F0D1749092F0023E407 /* NegativeTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F93F0C1749092F0023E407 /* NegativeTransactionCell.xib */; };
 		E0F93F10174909400023E407 /* NegativeTransactionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F93F0F174909400023E407 /* NegativeTransactionCell.m */; };
-		E0F93F14174911BE0023E407 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F93F13174911BE0023E407 /* plus.png */; };
-		E0F93F16174912CC0023E407 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F93F15174912CC0023E407 /* minus.png */; };
 		E0F93F19174917F60023E407 /* NewBudget.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F93F18174917F60023E407 /* NewBudget.m */; };
 		E0F93F1D174922050023E407 /* NewTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F93F1B174922040023E407 /* NewTransactionViewController.m */; };
 		E0F93F1E174922050023E407 /* NewTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F93F1C174922040023E407 /* NewTransactionViewController.xib */; };
@@ -60,6 +58,8 @@
 		E0F93F2817492C320023E407 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F93F2617492C310023E407 /* CalendarViewController.m */; };
 		E0F93F2917492C320023E407 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F93F2717492C310023E407 /* CalendarViewController.xib */; };
 		E0F93F2B17494C9E0023E407 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F93F2A17494C9E0023E407 /* CoreData.framework */; };
+		E0FB43CB1754DC78001C349E /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FB43C91754DC78001C349E /* minus.png */; };
+		E0FB43CC1754DC78001C349E /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FB43CA1754DC78001C349E /* plus.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,8 +124,6 @@
 		E0F93F0C1749092F0023E407 /* NegativeTransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NegativeTransactionCell.xib; sourceTree = "<group>"; };
 		E0F93F0E174909400023E407 /* NegativeTransactionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NegativeTransactionCell.h; sourceTree = "<group>"; };
 		E0F93F0F174909400023E407 /* NegativeTransactionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NegativeTransactionCell.m; sourceTree = "<group>"; };
-		E0F93F13174911BE0023E407 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
-		E0F93F15174912CC0023E407 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
 		E0F93F17174917F60023E407 /* NewBudget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewBudget.h; sourceTree = "<group>"; };
 		E0F93F18174917F60023E407 /* NewBudget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewBudget.m; sourceTree = "<group>"; };
 		E0F93F1A174922040023E407 /* NewTransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTransactionViewController.h; sourceTree = "<group>"; };
@@ -138,6 +136,8 @@
 		E0F93F2617492C310023E407 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		E0F93F2717492C310023E407 /* CalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		E0F93F2A17494C9E0023E407 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E0FB43C91754DC78001C349E /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
+		E0FB43CA1754DC78001C349E /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,11 +161,11 @@
 				E0F93F2317492AA80023E407 /* calendar.png */,
 				E0F93F21174925C40023E407 /* left arrow.png */,
 				E0F93F1F1749252D0023E407 /* right arrow.png */,
-				E0F93F15174912CC0023E407 /* minus.png */,
+				E0FB43C91754DC78001C349E /* minus.png */,
 				E0EBEC9D174BA87300DB8982 /* minusButton.png */,
 				E0EBEC95174BA59200DB8982 /* minusLabel.png */,
 				E090E7B3174BCC360012A570 /* neutralLabel.png */,
-				E0F93F13174911BE0023E407 /* plus.png */,
+				E0FB43CA1754DC78001C349E /* plus.png */,
 				E0EBEC9C174BA87300DB8982 /* plusButton.png */,
 				E0EBEC94174BA59200DB8982 /* plusLabel.png */,
 				E0531B2D1747E7ED00DDF3C9 /* Application.xib */,
@@ -355,8 +355,6 @@
 				E0A0D4F21747FD3B0044E00A /* HelpViewController.xib in Resources */,
 				E0F93F0B1749091A0023E407 /* PositiveTransactionCell.xib in Resources */,
 				E0F93F0D1749092F0023E407 /* NegativeTransactionCell.xib in Resources */,
-				E0F93F14174911BE0023E407 /* plus.png in Resources */,
-				E0F93F16174912CC0023E407 /* minus.png in Resources */,
 				E0F93F1E174922050023E407 /* NewTransactionViewController.xib in Resources */,
 				E0F93F201749252D0023E407 /* right arrow.png in Resources */,
 				E0F93F22174925C40023E407 /* left arrow.png in Resources */,
@@ -371,6 +369,8 @@
 				E090E7B4174BCC360012A570 /* neutralLabel.png in Resources */,
 				E090E7B9174BD9290012A570 /* NewUserViewController.xib in Resources */,
 				E01F15EE1753C47200CEFEFF /* ReminderViewController.xib in Resources */,
+				E0FB43CB1754DC78001C349E /* minus.png in Resources */,
+				E0FB43CC1754DC78001C349E /* plus.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
