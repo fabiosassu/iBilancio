@@ -53,6 +53,7 @@
     self.navigationItem.rightBarButtonItem = addButton;
     
     self.tableView.separatorColor = [UIColor clearColor];
+    self.tableView.backgroundView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"transactionsBackground.png"]]autorelease];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

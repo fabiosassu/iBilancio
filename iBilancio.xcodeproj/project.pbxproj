@@ -16,6 +16,8 @@
 		E04AC8FD174B753C00C2BB2C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E04AC8FC174B753C00C2BB2C /* User.m */; };
 		E04AC900174B753D00C2BB2C /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = E04AC8FF174B753C00C2BB2C /* Transaction.m */; };
 		E04AC903174B908200C2BB2C /* NewTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = E04AC902174B908200C2BB2C /* NewTransaction.m */; };
+		E051349E175656410093FBD9 /* transactionsBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E051349C175656410093FBD9 /* transactionsBackground@2x.png */; };
+		E051349F175656410093FBD9 /* transactionsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E051349D175656410093FBD9 /* transactionsBackground.png */; };
 		E0531B0B1747E79900DDF3C9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0531B0A1747E79900DDF3C9 /* UIKit.framework */; };
 		E0531B0D1747E79900DDF3C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0531B0C1747E79900DDF3C9 /* Foundation.framework */; };
 		E0531B0F1747E79900DDF3C9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0531B0E1747E79900DDF3C9 /* CoreGraphics.framework */; };
@@ -89,6 +91,8 @@
 		E04AC8FF174B753C00C2BB2C /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 		E04AC901174B908100C2BB2C /* NewTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTransaction.h; sourceTree = "<group>"; };
 		E04AC902174B908200C2BB2C /* NewTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTransaction.m; sourceTree = "<group>"; };
+		E051349C175656410093FBD9 /* transactionsBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transactionsBackground@2x.png"; sourceTree = "<group>"; };
+		E051349D175656410093FBD9 /* transactionsBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transactionsBackground.png; sourceTree = "<group>"; };
 		E0531B071747E79900DDF3C9 /* iBilancio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBilancio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0531B0A1747E79900DDF3C9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E0531B0C1747E79900DDF3C9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -205,6 +209,8 @@
 				E03C31DE17553117004B75AC /* settings@2x.png */,
 				E03C31D91755287F004B75AC /* transactions.png */,
 				E03C31DA1755287F004B75AC /* transactions@2x.png */,
+				E051349C175656410093FBD9 /* transactionsBackground@2x.png */,
+				E051349D175656410093FBD9 /* transactionsBackground.png */,
 				E0531B2D1747E7ED00DDF3C9 /* Application.xib */,
 				E0CA994517494E4600BD4A76 /* iBilancio.xcdatamodeld */,
 				E0531B2C1747E7CF00DDF3C9 /* controller */,
@@ -426,6 +432,8 @@
 				E03C31DC1755287F004B75AC /* transactions@2x.png in Resources */,
 				E03C31DF17553117004B75AC /* settings.png in Resources */,
 				E03C31E017553117004B75AC /* settings@2x.png in Resources */,
+				E051349E175656410093FBD9 /* transactionsBackground@2x.png in Resources */,
+				E051349F175656410093FBD9 /* transactionsBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
