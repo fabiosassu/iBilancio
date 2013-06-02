@@ -42,7 +42,6 @@
 		E089FDA31754F0460073529D /* NewBudgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E089FDA11754F0450073529D /* NewBudgetViewController.xib */; };
 		E089FDA71754F7E70073529D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E089FDA61754F7E70073529D /* icon@2x.png */; };
 		E089FDA91754FA030073529D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E089FDA81754FA030073529D /* icon.png */; };
-		E090E7B4174BCC360012A570 /* neutralLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = E090E7B3174BCC360012A570 /* neutralLabel.png */; };
 		E090E7B8174BD9290012A570 /* NewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E090E7B6174BD9280012A570 /* NewUserViewController.m */; };
 		E090E7B9174BD9290012A570 /* NewUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E090E7B7174BD9290012A570 /* NewUserViewController.xib */; };
 		E0A0D4F11747FD3B0044E00A /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A0D4EF1747FD3B0044E00A /* HelpViewController.m */; };
@@ -53,13 +52,18 @@
 		E0E71DE717551E4C00085EB9 /* Budget.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E71DE617551E4C00085EB9 /* Budget.m */; };
 		E0EBEC8E174B9BFE00DB8982 /* TValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EBEC8C174B9BFE00DB8982 /* TValueViewController.m */; };
 		E0EBEC8F174B9BFE00DB8982 /* TValueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EBEC8D174B9BFE00DB8982 /* TValueViewController.xib */; };
-		E0EBEC96174BA59200DB8982 /* plusLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = E0EBEC94174BA59200DB8982 /* plusLabel.png */; };
-		E0EBEC97174BA59200DB8982 /* minusLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = E0EBEC95174BA59200DB8982 /* minusLabel.png */; };
-		E0EBEC9E174BA87300DB8982 /* plusButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0EBEC9C174BA87300DB8982 /* plusButton.png */; };
-		E0EBEC9F174BA87300DB8982 /* minusButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0EBEC9D174BA87300DB8982 /* minusButton.png */; };
 		E0EC5710174960B10025288A /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EC570E174960B10025288A /* UsersViewController.m */; };
 		E0EC5711174960B10025288A /* UsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EC570F174960B10025288A /* UsersViewController.xib */; };
 		E0EC5714174962D80025288A /* NewUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EC5713174962D80025288A /* NewUser.m */; };
+		E0F0581B175B651B00F1CBC6 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F05814175B651B00F1CBC6 /* minus.png */; };
+		E0F0581C175B651B00F1CBC6 /* minusButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F05815175B651B00F1CBC6 /* minusButton.png */; };
+		E0F0581D175B651B00F1CBC6 /* minusLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F05816175B651B00F1CBC6 /* minusLabel.png */; };
+		E0F0581E175B651B00F1CBC6 /* neutralLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F05817175B651B00F1CBC6 /* neutralLabel.png */; };
+		E0F0581F175B651B00F1CBC6 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F05818175B651B00F1CBC6 /* plus.png */; };
+		E0F05820175B651B00F1CBC6 /* plusButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F05819175B651B00F1CBC6 /* plusButton.png */; };
+		E0F05821175B651B00F1CBC6 /* plusLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F0581A175B651B00F1CBC6 /* plusLabel.png */; };
+		E0F05824175B695A00F1CBC6 /* otherBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F05822175B695A00F1CBC6 /* otherBackground@2x.png */; };
+		E0F05825175B695A00F1CBC6 /* otherBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F05823175B695A00F1CBC6 /* otherBackground.png */; };
 		E0F93F09174909040023E407 /* PositiveTransactionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F93F08174909040023E407 /* PositiveTransactionCell.m */; };
 		E0F93F0B1749091A0023E407 /* PositiveTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F93F0A1749091A0023E407 /* PositiveTransactionCell.xib */; };
 		E0F93F0D1749092F0023E407 /* NegativeTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F93F0C1749092F0023E407 /* NegativeTransactionCell.xib */; };
@@ -73,8 +77,6 @@
 		E0F93F2817492C320023E407 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F93F2617492C310023E407 /* CalendarViewController.m */; };
 		E0F93F2917492C320023E407 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F93F2717492C310023E407 /* CalendarViewController.xib */; };
 		E0F93F2B17494C9E0023E407 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F93F2A17494C9E0023E407 /* CoreData.framework */; };
-		E0FB43CB1754DC78001C349E /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FB43C91754DC78001C349E /* minus.png */; };
-		E0FB43CC1754DC78001C349E /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FB43CA1754DC78001C349E /* plus.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,7 +129,6 @@
 		E089FDA11754F0450073529D /* NewBudgetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewBudgetViewController.xib; sourceTree = "<group>"; };
 		E089FDA61754F7E70073529D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		E089FDA81754FA030073529D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		E090E7B3174BCC360012A570 /* neutralLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neutralLabel.png; sourceTree = "<group>"; };
 		E090E7B5174BD9280012A570 /* NewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserViewController.h; sourceTree = "<group>"; };
 		E090E7B6174BD9280012A570 /* NewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserViewController.m; sourceTree = "<group>"; };
 		E090E7B7174BD9290012A570 /* NewUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserViewController.xib; sourceTree = "<group>"; };
@@ -142,15 +143,20 @@
 		E0EBEC8B174B9BFE00DB8982 /* TValueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TValueViewController.h; sourceTree = "<group>"; };
 		E0EBEC8C174B9BFE00DB8982 /* TValueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TValueViewController.m; sourceTree = "<group>"; };
 		E0EBEC8D174B9BFE00DB8982 /* TValueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TValueViewController.xib; sourceTree = "<group>"; };
-		E0EBEC94174BA59200DB8982 /* plusLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusLabel.png; sourceTree = "<group>"; };
-		E0EBEC95174BA59200DB8982 /* minusLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minusLabel.png; sourceTree = "<group>"; };
-		E0EBEC9C174BA87300DB8982 /* plusButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusButton.png; sourceTree = "<group>"; };
-		E0EBEC9D174BA87300DB8982 /* minusButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minusButton.png; sourceTree = "<group>"; };
 		E0EC570D174960B10025288A /* UsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersViewController.h; sourceTree = "<group>"; };
 		E0EC570E174960B10025288A /* UsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersViewController.m; sourceTree = "<group>"; };
 		E0EC570F174960B10025288A /* UsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UsersViewController.xib; sourceTree = "<group>"; };
 		E0EC5712174962D80025288A /* NewUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUser.h; sourceTree = "<group>"; };
 		E0EC5713174962D80025288A /* NewUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUser.m; sourceTree = "<group>"; };
+		E0F05814175B651B00F1CBC6 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
+		E0F05815175B651B00F1CBC6 /* minusButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minusButton.png; sourceTree = "<group>"; };
+		E0F05816175B651B00F1CBC6 /* minusLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minusLabel.png; sourceTree = "<group>"; };
+		E0F05817175B651B00F1CBC6 /* neutralLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neutralLabel.png; sourceTree = "<group>"; };
+		E0F05818175B651B00F1CBC6 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		E0F05819175B651B00F1CBC6 /* plusButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusButton.png; sourceTree = "<group>"; };
+		E0F0581A175B651B00F1CBC6 /* plusLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusLabel.png; sourceTree = "<group>"; };
+		E0F05822175B695A00F1CBC6 /* otherBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "otherBackground@2x.png"; sourceTree = "<group>"; };
+		E0F05823175B695A00F1CBC6 /* otherBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = otherBackground.png; sourceTree = "<group>"; };
 		E0F93F07174909040023E407 /* PositiveTransactionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositiveTransactionCell.h; sourceTree = "<group>"; };
 		E0F93F08174909040023E407 /* PositiveTransactionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositiveTransactionCell.m; sourceTree = "<group>"; };
 		E0F93F0A1749091A0023E407 /* PositiveTransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PositiveTransactionCell.xib; sourceTree = "<group>"; };
@@ -169,8 +175,6 @@
 		E0F93F2617492C310023E407 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		E0F93F2717492C310023E407 /* CalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		E0F93F2A17494C9E0023E407 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		E0FB43C91754DC78001C349E /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
-		E0FB43CA1754DC78001C349E /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,14 +201,16 @@
 				E089FDA81754FA030073529D /* icon.png */,
 				E089FDA61754F7E70073529D /* icon@2x.png */,
 				E0F93F21174925C40023E407 /* left arrow.png */,
+				E0F05814175B651B00F1CBC6 /* minus.png */,
+				E0F05815175B651B00F1CBC6 /* minusButton.png */,
+				E0F05816175B651B00F1CBC6 /* minusLabel.png */,
+				E0F05817175B651B00F1CBC6 /* neutralLabel.png */,
+				E0F05822175B695A00F1CBC6 /* otherBackground@2x.png */,
+				E0F05823175B695A00F1CBC6 /* otherBackground.png */,
+				E0F05818175B651B00F1CBC6 /* plus.png */,
+				E0F05819175B651B00F1CBC6 /* plusButton.png */,
+				E0F0581A175B651B00F1CBC6 /* plusLabel.png */,
 				E0F93F1F1749252D0023E407 /* right arrow.png */,
-				E0FB43C91754DC78001C349E /* minus.png */,
-				E0EBEC9D174BA87300DB8982 /* minusButton.png */,
-				E0EBEC95174BA59200DB8982 /* minusLabel.png */,
-				E090E7B3174BCC360012A570 /* neutralLabel.png */,
-				E0FB43CA1754DC78001C349E /* plus.png */,
-				E0EBEC9C174BA87300DB8982 /* plusButton.png */,
-				E0EBEC94174BA59200DB8982 /* plusLabel.png */,
 				E03C31DD17553117004B75AC /* settings.png */,
 				E03C31DE17553117004B75AC /* settings@2x.png */,
 				E03C31D91755287F004B75AC /* transactions.png */,
@@ -413,15 +419,8 @@
 				E0F93F2917492C320023E407 /* CalendarViewController.xib in Resources */,
 				E0EC5711174960B10025288A /* UsersViewController.xib in Resources */,
 				E0EBEC8F174B9BFE00DB8982 /* TValueViewController.xib in Resources */,
-				E0EBEC96174BA59200DB8982 /* plusLabel.png in Resources */,
-				E0EBEC97174BA59200DB8982 /* minusLabel.png in Resources */,
-				E0EBEC9E174BA87300DB8982 /* plusButton.png in Resources */,
-				E0EBEC9F174BA87300DB8982 /* minusButton.png in Resources */,
-				E090E7B4174BCC360012A570 /* neutralLabel.png in Resources */,
 				E090E7B9174BD9290012A570 /* NewUserViewController.xib in Resources */,
 				E01F15EE1753C47200CEFEFF /* ReminderViewController.xib in Resources */,
-				E0FB43CB1754DC78001C349E /* minus.png in Resources */,
-				E0FB43CC1754DC78001C349E /* plus.png in Resources */,
 				E089FD9B1754E3400073529D /* BudgetNotificationSelectorViewController.xib in Resources */,
 				E089FDA31754F0460073529D /* NewBudgetViewController.xib in Resources */,
 				E089FDA71754F7E70073529D /* icon@2x.png in Resources */,
@@ -434,6 +433,15 @@
 				E03C31E017553117004B75AC /* settings@2x.png in Resources */,
 				E051349E175656410093FBD9 /* transactionsBackground@2x.png in Resources */,
 				E051349F175656410093FBD9 /* transactionsBackground.png in Resources */,
+				E0F0581B175B651B00F1CBC6 /* minus.png in Resources */,
+				E0F0581C175B651B00F1CBC6 /* minusButton.png in Resources */,
+				E0F0581D175B651B00F1CBC6 /* minusLabel.png in Resources */,
+				E0F0581E175B651B00F1CBC6 /* neutralLabel.png in Resources */,
+				E0F0581F175B651B00F1CBC6 /* plus.png in Resources */,
+				E0F05820175B651B00F1CBC6 /* plusButton.png in Resources */,
+				E0F05821175B651B00F1CBC6 /* plusLabel.png in Resources */,
+				E0F05824175B695A00F1CBC6 /* otherBackground@2x.png in Resources */,
+				E0F05825175B695A00F1CBC6 /* otherBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

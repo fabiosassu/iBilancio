@@ -411,10 +411,7 @@
 				<reference key="NSNextKeyView" ref="740640955"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
-					<bytes key="NSWhite">MQA</bytes>
-					<object class="NSColorSpace" key="NSCustomColorSpace">
-						<int key="NSID">2</int>
-					</object>
+					<bytes key="NSWhite">MCAwAA</bytes>
 				</object>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<object class="IBUISimulatedNavigationBarMetrics" key="IBUISimulatedTopBarMetrics">
@@ -771,14 +768,26 @@
 					<string key="className">NewTransactionViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="advancedSwitchOn:">id</string>
 						<string key="calendarButtonPressed:">id</string>
+						<string key="cancel:">id</string>
 						<string key="nextDayButtonPressed:">id</string>
 						<string key="previousDayButtonPressed:">id</string>
+						<string key="reminderSwitchOn:">id</string>
+						<string key="saveTransaction:">id</string>
 						<string key="valueButtonPressed:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="advancedSwitchOn:">
+							<string key="name">advancedSwitchOn:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="calendarButtonPressed:">
 							<string key="name">calendarButtonPressed:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="cancel:">
+							<string key="name">cancel:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="nextDayButtonPressed:">
@@ -787,6 +796,14 @@
 						</object>
 						<object class="IBActionInfo" key="previousDayButtonPressed:">
 							<string key="name">previousDayButtonPressed:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="reminderSwitchOn:">
+							<string key="name">reminderSwitchOn:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="saveTransaction:">
+							<string key="name">saveTransaction:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="valueButtonPressed:">

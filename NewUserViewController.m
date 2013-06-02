@@ -32,6 +32,8 @@
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(addUser:)];
     [self.navigationItem setRightBarButtonItem:rightBarButton];
     
+    self.view.backgroundColor = [[[UIColor alloc]initWithPatternImage:[UIImage imageNamed:@"otherBackground.png"]]autorelease];
+    
     [self.userNamez becomeFirstResponder];
     
     

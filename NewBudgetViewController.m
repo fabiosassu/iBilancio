@@ -64,6 +64,9 @@
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveBudget:)];
     [self.navigationItem setRightBarButtonItem:rightBarButton];
     [rightBarButton release];
+    
+    self.view.backgroundColor = [[[UIColor alloc]initWithPatternImage:[UIImage imageNamed:@"otherBackground.png"]]autorelease];
+    
 }
 
 -(void) parseFloat:(NSNotification *) obj{
@@ -97,7 +100,14 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    
+    if (indexPath.row == self.selectedUser)
+    {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else
+    {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     // Configure the cell...
     cell.textLabel.text = [NSString stringWithFormat:@"%@",[(User*)[self.totalUsers objectAtIndex:indexPath.row]name]];
     return cell;
@@ -111,7 +121,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    self.selectedUser = indexPath.row;
     [tableView reloadData];
     // Navigation logic may go here. Create and push another view controller.
     

@@ -16,9 +16,9 @@
 
 @end
 
-@implementation UsersViewController{
-    int selectedIndex;
-}
+@implementation UsersViewController
+    
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -84,9 +84,9 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    
+    NSLog(@"sel_index= %d",  self.selectedIndex);
     // Configure the cell...
-    if (indexPath.row == selectedIndex)
+    if (indexPath.row == self.selectedIndex)
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
@@ -101,7 +101,7 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == selectedIndex)
+    if (indexPath.row == self.selectedIndex)
     {
         return NO;
     }
@@ -183,9 +183,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
         
-    selectedIndex = indexPath.row;
+    self.selectedIndex = indexPath.row;
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"selectedUser" object:[NSNumber numberWithInt:selectedIndex]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"selectedUser" object:[NSNumber numberWithInt:self.selectedIndex]];
     
     [self.navigationController popViewControllerAnimated:YES];
     [tableView reloadData];

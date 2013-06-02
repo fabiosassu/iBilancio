@@ -12,5 +12,5 @@
 @interface UsersViewController : UITableViewController
 
 @property (nonatomic, strong) NSMutableArray *users;
-
+@property (nonatomic) int selectedIndex;
 @end

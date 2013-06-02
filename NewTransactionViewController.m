@@ -28,6 +28,7 @@
     [super viewWillAppear:YES];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseFloat:) name:@"selectedValue" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getSign:) name:@"positivo" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setUser:) name:@"selectedUser" object:nil];
     
@@ -40,17 +41,18 @@
     
     self.valueLabel.text = [NSString stringWithFormat:@"%8.2f",self.selectedValue];
     
-    if (self.selectedValue > 0)
+    if(self.selectedValue != 0.0){
+    if (self.positivo)
     {
         UIImage *button = [UIImage imageNamed:@"plusLabel"];
         [self.valueButton setImage:button forState:0];
     }
-    if (self.selectedValue < 0)
+    else
     {
         UIImage *button = [UIImage imageNamed:@"minusLabel"];
         [self.valueButton setImage:button forState:0];
     }
-    
+    }
 
 }
 
@@ -69,6 +71,8 @@
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveTransaction:)];
     [self.navigationItem setRightBarButtonItem:rightBarButton];
     [rightBarButton release];
+    
+    self.view.backgroundColor = [[[UIColor alloc]initWithPatternImage:[UIImage imageNamed:@"otherBackground.png"]]autorelease];
     
     self.valueLabel.text = [NSString stringWithFormat:@"%8.2f",self.selectedValue];
     
@@ -119,6 +123,11 @@
 
 -(void) parseFloat:(NSNotification *) obj{
     self.selectedValue = [[obj object] doubleValue];
+    
+}
+
+-(void) getSign:(NSNotification *) obj{
+    self.positivo = [[obj object] boolValue];
     
 }
 
@@ -182,7 +191,7 @@
      UsersViewController *detailViewController = [[UsersViewController alloc] initWithNibName:@"UsersViewController" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
-//     detailViewController.users = self.totalUsers;
+     detailViewController.selectedIndex = self.selectedUser;
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
     }
@@ -240,6 +249,8 @@
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
     [newTransaction setValue:self.selectedDate forKey:@"date"];
+    if(!self.positivo)
+        self.selectedValue *= -1;
     [newTransaction setValue:[NSNumber numberWithDouble:self.selectedValue] forKey:@"value"];
     [newTransaction setValue:[self.totalUsers objectAtIndex:self.selectedUser] forKey:@"isMadeBy"];
     
@@ -272,6 +283,9 @@
     {
         self.reminderLabel.hidden = YES;
         self.reminderSwitch.hidden = YES;
+        self.reminderTableView.hidden = YES;
+        self.scrollView.contentSize = CGSizeMake(320, 548);
+        self.scrollView.scrollEnabled = NO;
     }
 }
 

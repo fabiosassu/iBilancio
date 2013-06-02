@@ -34,8 +34,10 @@
     [fetchRequest setSortDescriptors:sortDescriptors];
     self.transactions = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
+    NSLog(@"transaction count: %d", [self.transactions count]);
+    
     if ([self.transactions count] == 0) {
-        
+    
         NewTransactionViewController *firstTransaction = [[NewTransactionViewController alloc]initWithNibName:@"NewTransactionViewController" bundle:nil];
         firstTransaction.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:firstTransaction animated:YES];
