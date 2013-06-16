@@ -11,6 +11,7 @@
 @interface BudgetViewController : UITableViewController
 
 @property (strong) NSMutableArray *budgets;
+@property (strong) NSMutableArray *transactions;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

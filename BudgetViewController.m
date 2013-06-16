@@ -10,6 +10,7 @@
 #import "NewBudgetViewController.h"
 #import "AppDelegate.h"
 #import "Budget.h"
+#import "Transaction.h"
 
 @interface BudgetViewController ()
 
@@ -25,9 +26,11 @@
     
     // Fetch the transactions from persistent data store
     NSManagedObjectContext *managedObjectContext = [app managedObjectContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Budget"];
-    self.budgets = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    NSFetchRequest *fetchRequestBudget = [[NSFetchRequest alloc] initWithEntityName:@"Budget"];
+    self.budgets = [[managedObjectContext executeFetchRequest:fetchRequestBudget error:nil] mutableCopy];
     
+    NSFetchRequest *fetchRequestTransactions = [[NSFetchRequest alloc] initWithEntityName:@"Transaction"];
+    self.transactions = [[managedObjectContext executeFetchRequest:fetchRequestTransactions error:nil] mutableCopy];
     
     [self.tableView reloadData];
 }
@@ -75,10 +78,21 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
-    
+    int totalValue = 0;
+    for (int x = 0; x<self.transactions.count; x++) {
+        NSInteger nsi;
+        nsi = x;
+        totalValue += [[(Transaction*)[self.transactions objectAtIndex:nsi]value] intValue];
+    }
+    int finalValue = [[(Budget*)[self.budgets objectAtIndex:indexPath.row]amount] intValue]+totalValue;
     // Configure the cell...
     cell.textLabel.text = [NSString stringWithFormat:@"%@",[(Budget*)[self.budgets objectAtIndex:indexPath.row]name]];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",[(Budget*)[self.budgets objectAtIndex:indexPath.row]amount]];
+    if (finalValue<=0){
+        [cell.detailTextLabel setTextColor:[UIColor colorWithRed:255 green:0 blue:0 alpha:255]];
+    } else {
+        [cell.detailTextLabel setTextColor:[UIColor colorWithRed:0 green:255 blue:0 alpha:255]];
+    }
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d/%@",finalValue,[(Budget*)[self.budgets objectAtIndex:indexPath.row]amount]];
     return cell;
 }
 
