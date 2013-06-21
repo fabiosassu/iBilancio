@@ -117,12 +117,45 @@
         AppDelegate *app  = (AppDelegate*)[UIApplication sharedApplication].delegate;
         NSManagedObjectContext *context = [app managedObjectContext];
         [context deleteObject:[self.users objectAtIndex:indexPath.row]];
+        
+        // Fetch the transactions from persistent data store
+        NSManagedObjectContext *managedObjectContext = [app managedObjectContext];
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"User"];
+        self.users = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+        
+        if ([self.users count] == 0)
+        {
+            AppDelegate *app  = (AppDelegate*)[UIApplication sharedApplication].delegate;
+            
+            NSManagedObjectContext *context = [app managedObjectContext];
+            
+            NewUser *firstUser = [[NewUser alloc]initWithUserName:@"Me"];
+            firstUser.isAdmin = [NSNumber numberWithInt:1];
+            
+            User *newUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
+            
+            // If appropriate, configure the new managed object.
+            // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
+            [newUser setValue:firstUser.userName forKey:@"name"];
+            [newUser setValue:firstUser.isAdmin forKey:@"isAdmin"];
+            [firstUser release];
+            // Save the context.
+            NSError *error1 = nil;
+            if (![context save:&error1]) {
+                // Replace this implementation with code to handle the error appropriately.
+                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                NSLog(@"Unresolved error %@, %@", error1, [error1 userInfo]);
+                abort();
+            }
+
+        }
+        
         [tableView reloadData];
-        NSError *error = nil;
-        if (![context save:&error]) {
+        NSError *error2 = nil;
+        if (![context save:&error2]) {
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            NSLog(@"Unresolved error %@, %@", error2, [error2 userInfo]);
             abort();
         }
     }
