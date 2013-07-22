@@ -28,6 +28,7 @@
 @property (nonatomic, strong) NSDate *selectedDate;
 @property (nonatomic) double selectedValue;
 @property (nonatomic) bool positivo;
+@property (nonatomic) bool isFirstTransaction;
 @property (nonatomic, strong) NSMutableArray *totalUsers;
 @property (nonatomic) NSInteger selectedUser;
 

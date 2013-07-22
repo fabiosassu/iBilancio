@@ -11,5 +11,7 @@
 @interface SettingsViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UITableView *budgetNotificationselector;
+@property (nonatomic, strong) NSNumber *selectedIndex;
+@property (nonatomic, strong) NSMutableArray *alertOptions;
 
 @end

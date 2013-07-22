@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BudgetNotificationSelectorViewController : UITableViewController
+@property (nonatomic, strong) NSMutableArray *alertOptions;
+@property (nonatomic) int selectedIndex;
 
 @end

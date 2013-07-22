@@ -18,13 +18,33 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectedIndex:) name:@"selectedBudgetNotification" object:nil];
     [self.budgetNotificationselector reloadData];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [[[UIColor alloc]initWithPatternImage:[UIImage imageNamed:@"otherBackground.png"]]autorelease];
+    
+    self.alertOptions = [[NSMutableArray alloc]init];
+    
+    NSString *zeroBudget = [[NSString alloc]initWithString:@"0% of the budget"];
+    NSString *halfBudget = [[NSString alloc]initWithString:@"50% of the budget"];
+    NSString *quarterBudget = [[NSString alloc]initWithString:@"25% of the budget"];
+    NSString *seventyFiveBudget = [[NSString alloc]initWithString:@"75% of the budget"];
+    
+    [self.alertOptions addObject:zeroBudget];
+    [self.alertOptions addObject:quarterBudget];
+    [self.alertOptions addObject:halfBudget];
+    [self.alertOptions addObject:seventyFiveBudget];
+    
+    [zeroBudget release];
+    [halfBudget release];
+    [quarterBudget release];
+    [seventyFiveBudget release];
 }
 
 #pragma mark - Table view data source
@@ -52,7 +72,8 @@
     }
     
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"0%% of the budget"];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",[self.alertOptions objectAtIndex:[self.selectedIndex integerValue]]];
+    
     return cell;
 }
 
@@ -73,6 +94,11 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      
+}
+
+-(void) selectedIndex:(NSNotification *) obj{
+    self.selectedIndex = [obj object];
+    
 }
 
 

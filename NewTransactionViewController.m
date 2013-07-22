@@ -98,9 +98,11 @@
     
     [self.navigationItem setHidesBackButton:TRUE];
     
+    if (!self.isFirstTransaction){
     UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
     [self.navigationItem setLeftBarButtonItem:leftBarButton];
     [leftBarButton release];
+    }
     
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveTransaction:)];
     [self.navigationItem setRightBarButtonItem:rightBarButton];

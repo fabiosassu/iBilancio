@@ -18,6 +18,25 @@
 {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [[[UIColor alloc]initWithPatternImage:[UIImage imageNamed:@"otherBackground.png"]]autorelease];
+    
+    self.alertOptions = [[NSMutableArray alloc]init];
+    
+    NSString *zeroBudget = [[NSString alloc]initWithString:@"0% of the budget"];
+    NSString *halfBudget = [[NSString alloc]initWithString:@"50% of the budget"];
+    NSString *quarterBudget = [[NSString alloc]initWithString:@"25% of the budget"];
+    NSString *seventyFiveBudget = [[NSString alloc]initWithString:@"75% of the budget"];
+    
+    [self.alertOptions addObject:zeroBudget];
+    [self.alertOptions addObject:quarterBudget];
+    [self.alertOptions addObject:halfBudget];
+    [self.alertOptions addObject:seventyFiveBudget];
+    
+    [zeroBudget release];
+    [halfBudget release];
+    [quarterBudget release];
+    [seventyFiveBudget release];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -38,7 +57,7 @@
 {
 
     // Return the number of rows in the section.
-    return 0;
+    return [self.alertOptions count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -48,8 +67,17 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
+    if (indexPath.row == self.selectedIndex)
+    {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else
+    {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     // Configure the cell...
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",[self.alertOptions objectAtIndex:indexPath.row]];
     
     return cell;
 }
@@ -102,14 +130,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    self.selectedIndex = indexPath.row;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"selectedBudgetNotification" object:[NSNumber numberWithInt:self.selectedIndex]];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    [tableView reloadData];
 }
 
 @end

@@ -39,6 +39,7 @@
     if ([self.transactions count] == 0) {
     
         NewTransactionViewController *firstTransaction = [[NewTransactionViewController alloc]initWithNibName:@"NewTransactionViewController" bundle:nil];
+        firstTransaction.isFirstTransaction = YES;
         firstTransaction.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:firstTransaction animated:YES];
         [firstTransaction release];
@@ -131,6 +132,8 @@
         AppDelegate *app  = (AppDelegate*)[UIApplication sharedApplication].delegate;
         NSManagedObjectContext *context = [app managedObjectContext];
         [context deleteObject:[self.transactions objectAtIndex:indexPath.row]];
+        
+        [tableView reloadData];
         
         NSError *error = nil;
         if (![context save:&error]) {
